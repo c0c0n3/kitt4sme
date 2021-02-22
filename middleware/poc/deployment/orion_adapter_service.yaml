@@ -1,0 +1,52 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: orionadapter
+  name: orionadapterservice
+  namespace: "istio-system"
+spec:
+  ports:
+  - name: grpc
+    port: 43210
+    protocol: TCP
+    targetPort: 43210
+  - name: http
+    port: 54321
+    protocol: TCP
+    targetPort: 54321
+  selector:
+    app: orionadapter
+  type: ClusterIP
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: orionadapter
+  name: orionadapter
+  namespace: "istio-system"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: orionadapter
+  template:
+    metadata:
+      annotations:
+        "scheduler.alpha.kubernetes.io/critical-pod": ""
+        sidecar.istio.io/inject: "false"
+      labels:
+        app: orionadapter
+    spec:
+      containers:
+      - image: "boost/orionadapter:latest"
+        imagePullPolicy: Never
+        name: orionadapter
+        ports:
+        - containerPort: 43210
+          name: grpc
+        - containerPort: 54321
+          name: http

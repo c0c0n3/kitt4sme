@@ -1,0 +1,56 @@
+#
+# DO NOT APPLY this config since it ain't working and may cause havoc.
+# See:
+# - https://github.com/orchestracities/boost/issues/24
+#
+
+# apiVersion: networking.istio.io/v1alpha3
+# kind: Gateway
+# metadata:
+#     name: istio-egressgateway
+#     namespace: istio-system
+# spec:
+#   selector:
+#     istio: egressgateway
+#   servers:
+#   - port:
+#       number: 80
+#       name: http
+#       protocol: HTTP
+#     hosts:
+#     - "*"
+# ---
+
+apiVersion: networking.istio.io/v1alpha3
+kind: ServiceEntry
+metadata:
+  name: external-httpbin
+#  namespace: istio-system
+spec:
+  hosts:
+  - httpbin.org
+#  location: MESH_EXTERNAL
+  ports:
+  - number: 80
+    name: http
+    protocol: HTTP
+---
+
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: outbound-connector
+spec:
+  gateways:
+    - istio-egressgateway
+#    - mesh
+  hosts:
+    - httpbin.org
+  http:
+    - route:
+      - destination:
+          host: httpbin.org
+        # headers:
+        #   request:
+        #     add:
+        #       xxx: yyy

@@ -1,0 +1,81 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: EnvoyFilter
+metadata:
+  name: "orion-egress-filter"
+  namespace: default
+spec:
+  configPatches:
+  - applyTo: HTTP_FILTER
+    match:
+      context: SIDECAR_OUTBOUND
+      listener:
+        filterChain:
+          filter:
+            name: envoy.http_connection_manager
+            subFilter:
+              name: envoy.router
+        portNumber: 80
+    patch:
+      operation: INSERT_BEFORE
+      value:
+        config:
+          inlineCode: "\n    function envoy_on_request(request_handle)\n        local headers, body = request_handle:httpCall(\n            \"lua_cluster\",\n            { [\":method\"] = \"GET\",\n              [\":path\"] = \"/\",\n              [\":authority\"] = \"lua_cluster\"\n            },\n            \"\",\n            5000)\n        request_handle:headers():add(\"header\", body)\n    end\n"
+        name: envoy.lua
+  - applyTo: CLUSTER
+    patch:
+      operation: ADD
+      value:
+        connect_timeout: 5.5s
+        hosts:
+        - socket_address:
+            address: "orionadapterservice.istio-system"
+            port_value: 54321
+            protocol: TCP
+        lb_policy: ROUND_ROBIN
+        name: lua_cluster
+        type: STRICT_DNS
+  workloadSelector:
+    labels:
+      app: orion
+
+---
+
+apiVersion: networking.istio.io/v1alpha3
+kind: EnvoyFilter
+metadata:
+  name: "httpbin-egress-filter"
+  namespace: default
+spec:
+  configPatches:
+  - applyTo: HTTP_FILTER
+    match:
+      context: SIDECAR_OUTBOUND
+      listener:
+        filterChain:
+          filter:
+            name: envoy.http_connection_manager
+            subFilter:
+              name: envoy.router
+        portNumber: 80
+    patch:
+      operation: INSERT_BEFORE
+      value:
+        config:
+          inlineCode: "\n    function envoy_on_request(request_handle)\n        local headers, body = request_handle:httpCall(\n            \"lua_cluster\",\n            { [\":method\"] = \"GET\",\n              [\":path\"] = \"/\",\n              [\":authority\"] = \"lua_cluster\"\n            },\n            \"\",\n            5000)\n        request_handle:headers():add(\"header\", body)\n    end\n"
+        name: envoy.lua
+  - applyTo: CLUSTER
+    patch:
+      operation: ADD
+      value:
+        connect_timeout: 5.5s
+        hosts:
+        - socket_address:
+            address: "orionadapterservice.istio-system"
+            port_value: 54321
+            protocol: TCP
+        lb_policy: ROUND_ROBIN
+        name: lua_cluster
+        type: STRICT_DNS
+  workloadSelector:
+    labels:
+      app: httpbin
