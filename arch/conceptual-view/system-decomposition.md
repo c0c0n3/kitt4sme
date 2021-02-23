@@ -6,6 +6,10 @@ System decomposition
 ### Functional decomposition
 
 Here's the breakdown of the Kitt4Sme platform into sub-systems and layers.
+
+**TODO**: the text below is a straight C&P from the proposal and needs
+some massaging!
+
 Starting from the lowest layer, the KITT4SME architecture covers data
 gathering from different devices, deployed in the factory, feeding the
 knowledge-base of the system with raw and pre-processed data:
