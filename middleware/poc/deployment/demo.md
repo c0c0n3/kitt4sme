@@ -19,7 +19,7 @@ terminal
 
 Set up admin credentials
 
-    # grab initial password
+    # grab initial password (see note below)
     $ export ARGOCD_INITIAL_PASSWORD=`kubectl get pods -n argocd -l app.kubernetes.io/name=argocd-server -o name | cut -d'/' -f 2`
     
     # make sure you can actually login
@@ -30,10 +30,14 @@ Set up admin credentials
     # (hit 'y' to ignore self gen cert warning)
     $ argocd account update-password --account admin --current-password "${ARGOCD_INITIAL_PASSWORD}" --new-password 'abc123'
 
+###### Note
+The password trick works for Argo CD 1.8 and earlier, but won't work for 1.9.
+
 Create demo app
 
     $ argocd app create orion \
-        --repo https://github.com/c0c0n3/argocd-demo --path plain-k8s \
+        --repo https://github.com/c0c0n3/kitt4sme.wp2 \
+        --path middleware/poc/deployment/plain-k8s \
         --dest-namespace default --dest-server https://kubernetes.default.svc \
         --directory-recurse
 
