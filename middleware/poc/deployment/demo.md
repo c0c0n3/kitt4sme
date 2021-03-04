@@ -3,8 +3,8 @@ Demo
 
 Prep Minikube
 
-    $ minikube start -p argocd-demo --memory=16384 --cpus=4
-    $ kubectl config use-context argocd-demo
+    $ minikube start -p kitt4sme --memory=16384 --cpus=4
+    $ kubectl config use-context kitt4sme
 
 Install ArgoCD in the cluster and the CLI locally
 
@@ -35,7 +35,7 @@ The password trick works for Argo CD 1.8 and earlier, but won't work for 1.9.
 
 Create demo app
 
-    $ argocd app create orion \
+    $ argocd app create kitt4sme \
         --repo https://github.com/c0c0n3/kitt4sme.wp2 \
         --path middleware/poc/deployment/plain-k8s \
         --dest-namespace default --dest-server https://kubernetes.default.svc \
@@ -67,4 +67,4 @@ to force a sync from your file system. (Obviously you should be using
 a test cluster or a local cluster otherwise your GitOps benefits fly
 out of the window!)
 
-    $ argocd app sync orion --local ./plain-k8s
+    $ argocd app sync kitt4sme --local ./middleware/poc/deployment/plain-k8s

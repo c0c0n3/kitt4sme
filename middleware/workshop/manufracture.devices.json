@@ -1,0 +1,28 @@
+{
+ "devices": [
+   {
+     "device_id":   "bot1",
+     "entity_name": "urn:ngsi:bot:1",
+     "entity_type": "FactoryBot",
+     "timezone":    "Europe/Zurich",
+     "attributes": [
+       { "object_id": "b", "name": "bar", "type": "Integer" }
+     ],
+     "static_attributes": [
+       { "name": "category", "type": "Text", "value": "sensor" }
+     ]
+   },
+   {
+     "device_id":   "bot2",
+     "entity_name": "urn:ngsi:bot:2",
+     "entity_type": "FactoryBot",
+     "timezone":    "Europe/Zurich",
+     "attributes": [
+       { "object_id": "f", "name": "foo", "type": "Integer" }
+     ],
+     "static_attributes": [
+       { "name": "category", "type": "Text", "value": "sensor" }
+     ]
+   }
+ ]
+}

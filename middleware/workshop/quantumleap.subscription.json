@@ -1,0 +1,15 @@
+{
+  "description": "Notify QuantumLeap of changes to any entity",
+  "subject": {
+    "entities": [
+      {
+        "idPattern": ".*"
+      }
+    ]
+  },
+  "notification": {
+    "http": {
+      "url": "http://quantumleap:8668/v2/notify"
+    }
+  }
+}

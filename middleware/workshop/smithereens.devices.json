@@ -1,0 +1,17 @@
+{
+ "devices": [
+   {
+     "device_id":   "bot1",
+     "entity_name": "urn:ngsi:bot:1",
+     "entity_type": "FactoryBot",
+     "timezone":    "Europe/Zurich",
+     "attributes": [
+       { "object_id": "b1", "name": "bar", "type": "Integer" },
+       { "object_id": "f1", "name": "foo", "type": "Integer" }
+     ],
+     "static_attributes": [
+       { "name": "category", "type": "Text", "value": "sensor" }
+     ]
+  }
+ ]
+}
