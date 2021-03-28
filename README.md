@@ -1,3 +1,3 @@
-KITT4SME work package 2 artifacts
----------------------------------
-> all things wp2.
+KITT4SME architecture playground
+--------------------------------
+> Messing about with Kitt's AI, trying not to upset the Hoff.
