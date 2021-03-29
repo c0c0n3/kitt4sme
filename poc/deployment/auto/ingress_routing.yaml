@@ -1,0 +1,71 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: "kitt4sme-gateway"
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+  - hosts:
+    - "*"
+    port:
+      name: http
+      number: 80
+      protocol: HTTP
+
+---
+
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: "kitt4sme-virtual-service"
+spec:
+  gateways:
+  - "kitt4sme-gateway"
+  hosts:
+  - "*"
+  http:
+  - match:
+    - uri:
+        prefix: /orion
+    rewrite:
+      uri: /
+    route:
+    - destination:
+        host: orion.default.svc.cluster.local
+        port:
+          number: 1026
+  - match:
+    - uri:
+        prefix: /quantumleap
+    rewrite:
+      uri: /
+    route:
+    - destination:
+        host: quantumleap.default.svc.cluster.local
+        port:
+          number: 8668
+  - match:  # see https://github.com/istio/istio/issues/8076
+    - uri:
+        prefix: /iota-south/
+    - uri:
+        prefix: /iota-south
+    rewrite:
+      uri: /
+    route:
+    - destination:
+        host: ulagent.default.svc.cluster.local
+        port:
+          number: 7896
+  - match:  # see https://github.com/istio/istio/issues/8076
+    - uri:
+        prefix: /iota-north/
+    - uri:
+        prefix: /iota-north
+    rewrite:
+      uri: /
+    route:
+    - destination:
+        host: ulagent.default.svc.cluster.local
+        port:
+          number: 4041
