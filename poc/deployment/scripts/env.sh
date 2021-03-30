@@ -28,3 +28,25 @@ K4S_ORION="http://${K4S_CLUSTER_IP}/orion"
 K4S_QUANTUMLEAP="http://${K4S_CLUSTER_IP}/quantumleap"
 K4S_IOTA_NORTH="http://${K4S_CLUSTER_IP}/iota-north"
 K4S_IOTA_SOUTH="http://${K4S_CLUSTER_IP}/iota-south"
+
+
+
+# ------------------------------------------------------------------------------
+# Here's an example of doing the same thing when using Minikube dynamic
+# ports---i.e. Crate, Grafana, etc. are still node port services but don't
+# specify an explicit node port, so they get assigned a random port in the
+# load balancer.
+#
+
+# K4S_INGRESS_HOST=$(minikube ip -p kitt4sme)
+# K4S_INGRESS_HTTP_PORT=$(kubectl -n istio-system \
+#                         get service istio-ingressgateway \
+#                         -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')
+#
+# K4S_BASE_URL="http://${K4S_INGRESS_HOST}:${K4S_INGRESS_HTTP_PORT}"
+# K4S_GRAFANA_URL=$(minikube -p kitt4sme service grafana --url)
+#    # ^ this works b/c we only have one Grafana port, but Crate has 3, so
+#    #   we've got to pick the right one:
+# CRATE_UI_PORT=$(kubectl get service crate \
+#                 -o jsonpath='{.spec.ports[?(@.name=="crate-web")].nodePort}')
+# K4S_CRATE_URL="http://${K4S_INGRESS_HOST}:${CRATE_UI_PORT}"
