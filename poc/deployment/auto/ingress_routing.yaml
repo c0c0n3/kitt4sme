@@ -25,7 +25,9 @@ spec:
   hosts:
   - "*"
   http:
-  - match:
+  - match:  # see https://github.com/istio/istio/issues/8076
+    - uri:
+        prefix: /orion/
     - uri:
         prefix: /orion
     rewrite:
@@ -35,7 +37,9 @@ spec:
         host: orion.default.svc.cluster.local
         port:
           number: 1026
-  - match:
+  - match:  # see https://github.com/istio/istio/issues/8076
+    - uri:
+        prefix: /quantumleap/
     - uri:
         prefix: /quantumleap
     rewrite:
