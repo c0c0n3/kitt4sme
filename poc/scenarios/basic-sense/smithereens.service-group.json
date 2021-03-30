@@ -1,0 +1,10 @@
+{
+ "services": [
+   {
+     "apikey":      "5d4z",
+     "cbroker":     "http://orion:1026",
+     "entity_type": "Bot",
+     "resource":    "/iot/d"
+   }
+ ]
+}
