@@ -48,3 +48,53 @@ local cluster otherwise your GitOps benefits fly out of the window!)
 
 ### 3. Accessing services from outside the cluster
 
+The load balancer exposes a bunch of ports to clients outside the
+cluster. (Make sure those ports are available on your box when you
+start Minikube.) First, port `80` (`443`) is where HTTP(s) service
+traffic goes through. Second, the ArgoCD, CrateDB and Grafana Web
+UIs are, respectively, at ports `8080`, `4200` and `3000`. Here's
+the list of entry points:
+
+* Orion: `http://$(minikube ip -p kitt4sme)/orion`
+* QuantumLeap: `http://$(minikube ip -p kitt4sme)/quantumleap`
+* Ultralight Agent—provisioning: `http://$(minikube ip -p kitt4sme)/iota-north`
+* Ultralight Agent—data: `http://$(minikube ip -p kitt4sme)/iota-south`
+* ArgoCD UI: `http://$(minikube ip -p kitt4sme):8080`
+* CrateDB UI: `http://$(minikube ip -p kitt4sme):4200`
+* Grafana UI: `http://$(minikube ip -p kitt4sme):3000`
+
+Plus, don't forget you can easily get Istio to open a browser with
+Kiali's UI
+
+    $ istioctl dashboard kiali
+
+and that works for the Grafana mesh performance dashboards too
+
+    $ istioctl dashboard grafana
+
+
+### 4. Convenience scripts
+
+If you get tired of typing up those URLs every time, you can `source`
+the `env.sh` Bash script in the `scripts` dir that'll put them all in
+Bash variables for you. Also in the `scripts` directory, there's some
+Bash scripts that could come in handy
+
+* `ministart.sh` starts your Kitt4sme Minikube cluster and switches
+   K8s context accordingly. If the cluster isn't there, it makes a
+   new one for you.
+* `ministop.sh` stops your Kitt4sme Minikube cluster if it's running.
+* `argocd.depoy-local.sh` forces ArgoCD to do a backdoor local
+   deployment. Any files in your local `./auto/` dir get deployed,
+   recursively. (This is the kind of local deployment we mentioned
+   earlier on.)
+* `ui.argocd.sh` opens a browser window to navigate to the ArgoCD UI.
+* `ui.crate.sh`, same as above but gets you in the CrateDB UI.
+* `ui.grafana.sh`, same but for Grafana.
+
+Notice the last three UI scripts use the command specified by `OPEN_URL_CMD`
+(defined in `env.sh`) to call your fave browser. It defaults to `open`
+which will only work on MacOS, so replace `open` with whatever works
+on your box, e.g. `xdg-open` on Linux or just the name of your browser
+command, like `firefox`.
+
