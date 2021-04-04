@@ -1,0 +1,30 @@
+{
+ "devices": [
+   {
+     "device_id":   "foodev",
+     "entity_name": "urn:ngsi:bot:1",
+     "entity_type": "Bot",
+     "timezone":    "Europe/Zurich",
+     "attributes": [
+       { "object_id": "f", "name": "foo", "type": "Integer" },
+       { "object_id": "b", "name": "bar", "type": "Integer" }
+     ],
+     "static_attributes": [
+       { "name": "category", "type": "Text", "value": "sensor" }
+     ]
+   },
+   {
+     "device_id":   "bardev",
+     "entity_name": "urn:ngsi:bot:2",
+     "entity_type": "Bot",
+     "timezone":    "Europe/Zurich",
+     "attributes": [
+       { "object_id": "f", "name": "foo", "type": "Integer" },
+       { "object_id": "b", "name": "bar", "type": "Integer" }
+     ],
+     "static_attributes": [
+       { "name": "category", "type": "Text", "value": "sensor" }
+     ]
+   }
+ ]
+}

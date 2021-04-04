@@ -1,0 +1,68 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: grafana
+  name: grafana
+spec:
+  ports:
+  - name: http
+    port: 3000
+    protocol: TCP
+    targetPort: 3000
+    # Make Web UI available at port 3000 from outside the cluster.
+    nodePort: 3000
+  selector:
+    app: grafana
+  type: NodePort
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: grafana
+  name: grafana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      containers:
+        - image: grafana/grafana:6.1.6
+          imagePullPolicy: IfNotPresent
+          name: grafana
+          env:
+          # Disable login so we can get straight in. At this stage we
+          # don't care about security, we just want to make our life
+          # easier as we develop the POC.
+          - name: "GF_AUTH_ANONYMOUS_ENABLED"
+            value: "true"
+          - name: "GF_AUTH_ANONYMOUS_ORG_ROLE"
+            value: "Admin"
+          - name: "GF_AUTH_BASIC_ENABLED"
+            value: "false"
+          - name: "GF_SECURITY_ADMIN_PASSWORD"
+            value: "-"
+          - name: "GF_SECURITY_ADMIN_USER"
+            value: "-"
+          ports:
+          - containerPort: 3000
+            name: http
+          readinessProbe:
+            httpGet:
+              path: /api/health
+              port: http
+          resources:
+            limits:
+              cpu: 200m
+              memory: 200Mi
+            requests:
+              cpu: 100m
+              memory: 100Mi
