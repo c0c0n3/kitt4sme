@@ -1,0 +1,55 @@
+{
+    "attributes": {
+        "destination": {
+            "address": {
+                "socketAddress": {
+                    "portValue": 8000,
+                    "address": "10.25.95.68"
+                }
+            }
+        },
+        "metadataContext": {
+            "filterMetadata": {
+                "envoy.filters.http.header_to_metadata": {
+                    "policy_type": "ingres"
+                }
+            }
+        },
+        "request": {
+            "http": {
+                "headers": {
+                    "fiware-service": "y",
+                    ":authority": "example-app",
+                    ":method": "POST",
+                    ":path": "/pets/dogs",
+                    "accept": "*/*",
+                    "authorization": "Bearer eyJhbGciOiAiUlMyNTYiLCAidHlwIjogIkpXVCJ9.eyJleHAiOiAxMDAwMDAwMDAwMCwgInRlbmFudCI6ICJ5In0.Hnp_9yx5VdT4h8TMheHVGq8KiwESYsh0aWsijqT_x0Xs96cd1c7KeorM1M-bmIc8dF17UeXPSpYX5Nky4hnl8mvoFGj-5-TPhWsT512dtS4-Mxrxowz4xLPnLFUNsWp7bKSG1ZkpwVfs2vQk2tZdAnr9lgrAvWbg7FzkPG5dW6j0v3vz6GzwV245QywhlZY3tB7XAuK0Y1Zt-CaRcliWCwRr50bwJ0Vb2Dv8Pqtnm5FsD-3GgFHl7uaF2flXozufN6JgP4pCglz0QM_SfedZSZsBjdJ8Sqo7tBZTAhr5q7ll3jo6Bjc_qFNDB5jYmmEI1TAL6Z7ii78FHsGquyNORw",
+                    "content-length": "0",
+                    "user-agent": "curl/7.68.0-DEV",
+                    "x-ext-auth-allow": "yes",
+                    "x-forwarded-proto": "http",
+                    "x-request-id": "1455bbb0-0623-4810-a2c6-df73ffd8863a"
+                },
+                "host": "example-app",
+                "id": "8306787481883314548",
+                "method": "POST",
+                "path": "/pets/dogs",
+                "protocol": "HTTP/1.1"
+            }
+        },
+        "source": {
+            "address": {
+                "socketAddress": {
+                    "portValue": 33772,
+                    "address": "10.25.95.69"
+                }
+            }
+        }
+    },
+    "parsed_body": {},
+    "parsed_path": [
+        "pets",
+        "dogs"
+    ],
+    "parsed_query": {}
+}
