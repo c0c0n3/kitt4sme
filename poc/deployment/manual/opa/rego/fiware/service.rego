@@ -39,7 +39,7 @@ valid_request {
 }
 
 # Verify the Bearer token and extract its payload.
-# Check the all of the statements below are true:
+# Check all of the statements below are true:
 #
 # * the algo in the header is the same we expect;
 # * the token signature is valid;
