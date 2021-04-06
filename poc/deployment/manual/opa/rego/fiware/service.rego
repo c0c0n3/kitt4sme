@@ -1,14 +1,20 @@
 #
-# Check an HTTP request to a FIWARE service is valid—see below for the
-# details. Notice the checks below are, in general, not enough to go
-# ahead with the request, since typically you'd want to check scopes,
-# etc. So while you can use this policy as a first step in an authn/authz
-# chain, you'd typically supplement it with other policies.
+# Make FIWARE multi-tenancy airtight: the tenant in the FIWARE service
+# header has to match the one in the Bearer token for an HTTP request
+# to a FIWARE service to be valid—see below for the details. Notice the
+# checks below are, in general, not enough to go ahead with the request,
+# since typically you'd want to check scopes, etc. So while you can use
+# this policy as a first step in an authn/authz chain, you'd typically
+# supplement it with other policies.
 #
-
-# TODO change tenant
-# opa eval 'allow' -i fiware/istio-example-input.json -d ./ --package 'fiware.service'
-# opa eval 'data.fiware.service.allow' -i fiware/istio-example-input.json -d ./
+# Example
+#
+# $ cd poc/deployment/opa/rego
+# $ opa eval 'data.fiware.service.allow' -i fiware/istio-example-input.json -d ./
+#   # ^ or equivalently
+#   # opa eval 'allow' -i fiware/istio-example-input.json -d ./ --package 'fiware.service'
+#   # also try appending `-f values` for less verbose output.
+#
 
 package fiware.service
 

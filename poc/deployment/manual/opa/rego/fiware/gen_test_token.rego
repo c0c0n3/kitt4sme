@@ -4,8 +4,12 @@
 #
 # Example
 #
-# $ cd rego
-# $ echo '"my-tenant"' | opa eval 'test_token' -d ./ -I --package 'fiware.service'
+# $ cd poc/deployment/opa/rego
+# $ echo '"my-tenant"' | \
+#   opa eval 'test_token' -I -d ./ --package 'fiware.service'
+#   # ^ or equivalently
+#   # opa eval 'data.fiware.service.test_token' -I -d ./
+#   # also try appending `-f values` for less verbose output.
 #
 
 package fiware.service
