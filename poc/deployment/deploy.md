@@ -72,6 +72,12 @@ and that works for the Grafana mesh performance dashboards too
 
     $ istioctl dashboard grafana
 
+Oh, one thing I should mention is that whereas you can get straight
+into the UIs without even logging in, the FIWARE API endpoints (except
+for the version endpoints) are protected by OPA, so you'll need a valid
+token to interact with them. If that comes in your way, just delete the
+Istio `AuthorizationPolicy`—see `fiware-ingress-policy.yaml`.
+
 
 ### 4. Convenience scripts
 

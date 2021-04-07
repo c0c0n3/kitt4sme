@@ -18,6 +18,7 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 REPODIR="$( cd "${SCRIPTDIR}/../../../" && pwd )"
 
 source "${REPODIR}/poc/deployment/scripts/env.sh"
+source "${SCRIPTDIR}/tokens.sh"
 
 
 #
@@ -29,6 +30,7 @@ print_header "Provisioning ManuFracture service group."
 
 curl -v "${K4S_IOTA_NORTH}/iot/services" \
      -H 'Content-Type: application/json' \
+     -H "Authorization: ${MANUFRACTURE_BEARER}" \
      -H 'fiware-service: manufracture' \
      -H 'fiware-servicepath: /floor1' \
      -d @"${SCRIPTDIR}/manufracture.service-group.json"
@@ -37,6 +39,7 @@ curl -v "${K4S_IOTA_NORTH}/iot/services" \
 print_header "Retrieving ManuFracture service group."
 
 curl -v "${K4S_IOTA_NORTH}/iot/services" \
+     -H "Authorization: ${MANUFRACTURE_BEARER}" \
      -H 'fiware-service: manufracture' \
      -H 'fiware-servicepath: /floor1'
 
@@ -45,6 +48,7 @@ print_header "Provisioning Smithereens service group."
 
 curl -v "${K4S_IOTA_NORTH}/iot/services" \
      -H 'Content-Type: application/json' \
+     -H "Authorization: ${SMITHEREENS_BEARER}" \
      -H 'fiware-service: smithereens' \
      -H 'fiware-servicepath: /' \
      -d @"${SCRIPTDIR}/smithereens.service-group.json"
@@ -53,6 +57,7 @@ curl -v "${K4S_IOTA_NORTH}/iot/services" \
 print_header "Retrieving Smithereens service group."
 
 curl -v "${K4S_IOTA_NORTH}/iot/services" \
+     -H "Authorization: ${SMITHEREENS_BEARER}" \
      -H 'fiware-service: smithereens' \
      -H 'fiware-servicepath: /'
 
@@ -66,6 +71,7 @@ print_header "Provisioning ManuFracture devices."
 
 curl -v "${K4S_IOTA_NORTH}/iot/devices" \
      -H 'Content-Type: application/json' \
+     -H "Authorization: ${MANUFRACTURE_BEARER}" \
      -H 'fiware-service: manufracture' \
      -H 'fiware-servicepath: /floor1' \
      -d @"${SCRIPTDIR}/manufracture.devices.json"
@@ -74,12 +80,14 @@ curl -v "${K4S_IOTA_NORTH}/iot/devices" \
 print_header "Retrieving ManuFracture devices from Agent."
 
 curl -v "${K4S_IOTA_NORTH}/iot/devices" \
+     -H "Authorization: ${MANUFRACTURE_BEARER}" \
      -H 'fiware-service: manufracture' \
      -H 'fiware-servicepath: /floor1'
 
 print_header "Retrieving ManuFracture devices from Context Broker."
 
 curl -v "${K4S_ORION}/v2/entities" \
+     -H "Authorization: ${MANUFRACTURE_BEARER}" \
      -H 'fiware-service: manufracture'
 
 
@@ -87,6 +95,7 @@ print_header "Provisioning Smithereens devices."
 
 curl -v "${K4S_IOTA_NORTH}/iot/devices" \
      -H 'Content-Type: application/json' \
+     -H "Authorization: ${SMITHEREENS_BEARER}" \
      -H 'fiware-service: smithereens' \
      -H 'fiware-servicepath: /' \
      -d @"${SCRIPTDIR}/smithereens.devices.json"
@@ -95,10 +104,12 @@ curl -v "${K4S_IOTA_NORTH}/iot/devices" \
 print_header "Retrieving Smithereens devices from Agent."
 
 curl -v "${K4S_IOTA_NORTH}/iot/devices" \
+     -H "Authorization: ${SMITHEREENS_BEARER}" \
      -H 'fiware-service: smithereens' \
      -H 'fiware-servicepath: /'
 
 print_header "Retrieving Smithereens devices from Context Broker."
 
 curl -v "${K4S_ORION}/v2/entities" \
+     -H "Authorization: ${SMITHEREENS_BEARER}" \
      -H 'fiware-service: smithereens'

@@ -1,0 +1,55 @@
+{
+    "attributes": {
+        "destination": {
+            "address": {
+                "socketAddress": {
+                    "portValue": 8000,
+                    "address": "10.25.95.68"
+                }
+            }
+        },
+        "metadataContext": {
+            "filterMetadata": {
+                "envoy.filters.http.header_to_metadata": {
+                    "policy_type": "ingres"
+                }
+            }
+        },
+        "request": {
+            "http": {
+                "headers": {
+                    "fiware-service": "yer-creepy-tenant",
+                    ":authority": "example-app",
+                    ":method": "POST",
+                    ":path": "/pets/dogs",
+                    "accept": "*/*",
+                    "authorization": "Bearer eyJhbGciOiAiUlMyNTYiLCAidHlwIjogIkpXVCJ9.eyJleHAiOiAxMDAwMDAwMDAwMCwgInRlbmFudCI6ICJ5ZXItY3JlZXB5LXRlbmFudCJ9.nDLMDKcyYO83gOjTfUnmbi6P6lcVgmwLxDZj1lAi5M7cyK-AILFrWMyXoGUttO_RPwwiPaNYkFx70Oj0eCEfjgyvT0aJeRSNTGD0caYhc5f2wJkgA3r7Ax6jlIXl4149rlA5VzHaTFRQHuy6wBOpydHXpDoCtQ1uFm4-IAAAeAqNYn8SU_Tc04XELM1JzIRtXb4onSiIYTKsQILjr59t-0nlDfUxoF9UR3Yc3Q-zv3TLGzDBwlqqc68NEqL1UyeCS-MZPTACkwXkYg9qSbZQnmCxBH4vJf3OKDDZ-JBTbfOtsmZjJv3FGy9DdBgYWcuCn0t6vLIZtpZF0J_EGcJWyA",
+                    "content-length": "0",
+                    "user-agent": "curl/7.68.0-DEV",
+                    "x-ext-auth-allow": "yes",
+                    "x-forwarded-proto": "http",
+                    "x-request-id": "1455bbb0-0623-4810-a2c6-df73ffd8863a"
+                },
+                "host": "example-app",
+                "id": "8306787481883314548",
+                "method": "POST",
+                "path": "/pets/dogs",
+                "protocol": "HTTP/1.1"
+            }
+        },
+        "source": {
+            "address": {
+                "socketAddress": {
+                    "portValue": 33772,
+                    "address": "10.25.95.69"
+                }
+            }
+        }
+    },
+    "parsed_body": {},
+    "parsed_path": [
+        "pets",
+        "dogs"
+    ],
+    "parsed_query": {}
+}
