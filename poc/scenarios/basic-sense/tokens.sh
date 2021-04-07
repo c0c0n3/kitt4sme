@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+#
+# ManuFracture and Smithereens Bearer JWTs to access FIWARE services.
+# Generated with
+#
+# $ cd poc/deployment/manual/opa/rego
+# $ echo '"manufracture"' | opa eval 'data.fiware.service.tasty_token' -I -d .
+# $ echo '"smithereens"' | opa eval 'data.fiware.service.tasty_token' -I -d .
+#
+
+MANUFRACTURE_BEARER="Bearer eyJhbGciOiAiUlMyNTYiLCAidHlwIjogIkpXVCJ9.eyJleHAiOiAxMDAwMDAwMDAwMCwgInRlbmFudCI6ICJtYW51ZnJhY3R1cmUifQ.SSY8_6ISktesvsqWeL2ds6xHwU_YzhfnTiek4NXO_TSorwVGxPZPHVljb9-vXq7V5pTGWFldJ3Cs-hasJSyUQQ2gtnpkZOZ10vZ653q1LPHGl8tua78cBBdbR3Z2fAj0n8hqNW8AByeoKAEv_MQB2o2pL2MbZutr-VYTzUbkR4U301pyMbWNCTcJMCTP1BrOR8QdFNRl064rD-1XxgD2PxWwvrk6CaBJ7wPHCDk93M0wWET21fb4VHAVASnm7nuAVNYIL5dpkwP9DMxMrBqIhV2nCf18um3O93HxLx-9xMS30VKzi1mPgWHK89SVCve_Y8-Dnk80sZTQPMGU6kqH3A"
+SMITHEREENS_BEARER="Bearer eyJhbGciOiAiUlMyNTYiLCAidHlwIjogIkpXVCJ9.eyJleHAiOiAxMDAwMDAwMDAwMCwgInRlbmFudCI6ICJzbWl0aGVyZWVucyJ9.Ai8I6e7tkLS3SBlmRxyCPnbK_8UbZxN3tkNwLKQa3MIxc_gL5S3UnMMvRoWq4OGhTPqvzAShkDBlKZ3_EWe3NMCG9Lzouw_Frxsy_zOmpA6YdJ0s-5QJC2QZFbF0DvWbCkk7ojqsz6k6wdgaTv7mXbIcJnYsGpT1_l2IA25Pt_5wvLlop1QEVr_4A3XUkwQX62galJmNP2SkimDYxwIsvDqWZhMquiwsJecgQgJDSRVA5UOHkIIOnmc9tXxSHglhmLaznKGv7olfmsit52J8BhL0rjAswkS3p6K5Td2--ZLNl7ZicCDrci_3AtvXFVsjzd9Z1fVqOGo8-SoMzryTuA"

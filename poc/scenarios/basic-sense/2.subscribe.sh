@@ -19,12 +19,14 @@ SCRIPTDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 REPODIR="$( cd "${SCRIPTDIR}/../../../" && pwd )"
 
 source "${REPODIR}/poc/deployment/scripts/env.sh"
+source "${SCRIPTDIR}/tokens.sh"
 
 
 print_header "Creating catch-all ManuFracture entities subscription for QL."
 
 curl -v "${K4S_ORION}/v2/subscriptions" \
      -H 'Content-Type: application/json' \
+     -H "Authorization: ${MANUFRACTURE_BEARER}" \
      -H 'fiware-service: manufracture' \
      -d @"${SCRIPTDIR}/quantumleap.subscription.json"
 
@@ -51,6 +53,7 @@ curl -v "${K4S_ORION}/v2/subscriptions" \
 print_header "Retrieving ManuFracture subscription from Context Broker."
 
 curl -v "${K4S_ORION}/v2/subscriptions" \
+     -H "Authorization: ${MANUFRACTURE_BEARER}" \
      -H 'fiware-service: manufracture'
 
 
@@ -58,10 +61,12 @@ print_header "Creating catch-all Smithereens entities subscription for QL."
 
 curl -v "${K4S_ORION}/v2/subscriptions" \
      -H 'Content-Type: application/json' \
+     -H "Authorization: ${SMITHEREENS_BEARER}" \
      -H 'fiware-service: smithereens' \
      -d @"${SCRIPTDIR}/quantumleap.subscription.json"
 
 print_header "Retrieving Smithereens subscription from Context Broker."
 
 curl -v "${K4S_ORION}/v2/subscriptions" \
+     -H "Authorization: ${SMITHEREENS_BEARER}" \
      -H 'fiware-service: smithereens'

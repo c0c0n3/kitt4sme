@@ -1,0 +1,26 @@
+#
+# Secure access to the cluster by delegating authz decisions to our
+# OPA instance.
+#
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: fiware-opa
+  namespace: istio-system
+spec:
+  selector:
+    matchLabels:
+      istio: ingressgateway
+  action: CUSTOM
+  provider:
+    name: "opa.default"
+  rules:
+  - to:
+    - operation:
+        # Ask OPA for permission to go ahead w/ any incoming request except
+        # for requests to retrieve FIWARE service versions where there's no
+        # need for authorisation.
+        notPaths:
+        - "/orion/version"
+        - "/quantumleap/version"
+        - "/iota-north/iot/about"
