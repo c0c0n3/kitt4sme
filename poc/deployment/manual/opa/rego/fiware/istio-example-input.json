@@ -23,7 +23,7 @@
                     ":method": "POST",
                     ":path": "/pets/dogs",
                     "accept": "*/*",
-                    "authorization": "Bearer eyJhbGciOiAiUlMyNTYiLCAidHlwIjogIkpXVCJ9.eyJleHAiOiAxMDAwMDAwMDAwMCwgInRlbmFudCI6ICJ5ZXItY3JlZXB5LXRlbmFudCJ9.nDLMDKcyYO83gOjTfUnmbi6P6lcVgmwLxDZj1lAi5M7cyK-AILFrWMyXoGUttO_RPwwiPaNYkFx70Oj0eCEfjgyvT0aJeRSNTGD0caYhc5f2wJkgA3r7Ax6jlIXl4149rlA5VzHaTFRQHuy6wBOpydHXpDoCtQ1uFm4-IAAAeAqNYn8SU_Tc04XELM1JzIRtXb4onSiIYTKsQILjr59t-0nlDfUxoF9UR3Yc3Q-zv3TLGzDBwlqqc68NEqL1UyeCS-MZPTACkwXkYg9qSbZQnmCxBH4vJf3OKDDZ-JBTbfOtsmZjJv3FGy9DdBgYWcuCn0t6vLIZtpZF0J_EGcJWyA",
+                    "fiware-authz": "eyJhbGciOiAiUlMyNTYiLCAidHlwIjogIkpXVCJ9.eyJleHAiOiAxMDAwMDAwMDAwMCwgInRlbmFudCI6ICJ5ZXItY3JlZXB5LXRlbmFudCJ9.nDLMDKcyYO83gOjTfUnmbi6P6lcVgmwLxDZj1lAi5M7cyK-AILFrWMyXoGUttO_RPwwiPaNYkFx70Oj0eCEfjgyvT0aJeRSNTGD0caYhc5f2wJkgA3r7Ax6jlIXl4149rlA5VzHaTFRQHuy6wBOpydHXpDoCtQ1uFm4-IAAAeAqNYn8SU_Tc04XELM1JzIRtXb4onSiIYTKsQILjr59t-0nlDfUxoF9UR3Yc3Q-zv3TLGzDBwlqqc68NEqL1UyeCS-MZPTACkwXkYg9qSbZQnmCxBH4vJf3OKDDZ-JBTbfOtsmZjJv3FGy9DdBgYWcuCn0t6vLIZtpZF0J_EGcJWyA",
                     "content-length": "0",
                     "user-agent": "curl/7.68.0-DEV",
                     "x-ext-auth-allow": "yes",

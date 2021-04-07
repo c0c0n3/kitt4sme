@@ -1,11 +1,12 @@
 #
-# Make FIWARE multi-tenancy airtight: the tenant in the FIWARE service
-# header has to match the one in the Bearer token for an HTTP request
-# to a FIWARE service to be valid—see below for the details. Notice the
-# checks below are, in general, not enough to go ahead with the request,
-# since typically you'd want to check scopes, etc. So while you can use
-# this policy as a first step in an authn/authz chain, you'd typically
-# supplement it with other policies.
+# Make FIWARE multi-tenancy airtight: for any HTTP request to a FIWARE
+# service to be valid, it must specify a tenant through the FIWARE
+# service header and a valid JWT (`fiware-authz` header) holding the
+# same tenant value—see below for the details.
+# Surely you can use this policy in your authn/authz chain but, in
+# practice, you'll want to check other things too (e.g. scopes) before
+# going ahead with the request, so you'd typically supplement this
+# policy with other policies.
 #
 # Example
 #
@@ -15,6 +16,19 @@
 #   # opa eval 'allow' -i fiware/istio-example-input.json -d ./ --package 'fiware.service'
 #   # also try appending `-f values` for less verbose output.
 #
+# NOTE. HTTP 'Authorization' header.
+# Why not use the 'Authorization' header with a Bearer token? Well, it
+# looks like Istio won't forward that header to the OPA service when
+# using external authorisation. This is probably b/c Istio has built-in
+# support for handling Bearer tokens and you should explicitly set up a
+# RequestAuthentication policy to forward the 'Authorization' header:
+#
+# - https://discuss.istio.io/t/passing-authorization-headers-automatically-jwt-between-microservices/9053
+# - https://istio.io/latest/docs/reference/config/security/jwt/
+#
+# which is more work than I'm prepared to do, so we use a custom
+# header for now.
+
 
 package fiware.service
 
@@ -28,7 +42,7 @@ allow {
 # An HTTP request to a FIWARE service is valid if all of the statements
 # below are true:
 #
-# * the request holds a valid Bearer token—see below for the details;
+# * the request holds a valid JWT—see below for the details;
 # * the token has a `tenant` field with a non-empty value of `t`;
 # * the request holds a FIWARE service header with a value of `s`;
 # * `s == t`.
@@ -38,8 +52,9 @@ valid_request {
     claims.tenant == input.attributes.request.http.headers["fiware-service"]
 }
 
-# Verify the Bearer token and extract its payload.
-# Check all of the statements below are true:
+# Verify the JWT token and extract its payload. Expect the token to be
+# in the `fiware-authz` header. Check all of the statements below are
+# true:
 #
 # * the algo in the header is the same we expect;
 # * the token signature is valid;
@@ -50,7 +65,8 @@ valid_request {
 # date in the past.
 #
 claims := payload {
-    [valid, header, payload] := io.jwt.decode_verify(bearer_token, {
+    token := input.attributes.request.http.headers["fiware-authz"]
+    [valid, header, payload] := io.jwt.decode_verify(token, {
         "alg": "RS256",
         "cert": pub_key
     })
@@ -64,17 +80,6 @@ claims := payload {
     # sets `valid` to `true`.
     payload.exp
 }
-
-# Extract the Bearer token from the HTTP request if present, otherwise
-# set `bearer_token` to `undefined`.
-# NB this is a copy-paste from the Rego playground JWT example and needs
-# to be a bit more robust.
-bearer_token := t {
-    v := input.attributes.request.http.headers.authorization
-    startswith(v, "Bearer ")
-    t := substring(v, count("Bearer "), -1)
-}
-
 
 # RSA public key to check JWT signatures.
 # See `rsa-key-pair.rego` for the details.
