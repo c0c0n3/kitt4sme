@@ -68,7 +68,47 @@ that namespace
     $ kubectl label namespace default istio-injection=enabled
 
 
-### 3. ArgoCD
+### 3. OPA
+
+We'll use [Open Policy Agent][opa] to secure our services. In fact,
+we've got a Rego policy to check for service tokens before granting
+access to FIWARE API endpoints. First thing to do is to create a K8s
+secret containing that policy
+
+    $ kubectl create secret generic opa-policy \
+        --from-file poc/deployment/manual/opa/rego/fiware/service.rego
+
+Then deploy an OPA service in the `default` namespace.
+
+    $ kubectl apply -f poc/deployment/manual/opa/istio/standalone.yaml
+
+Put the finishing touches to our setup by telling Istio to delegate
+custom authentication actions to our OPA guy
+
+    $ EDITOR=emacs kubectl edit configmap istio -n istio-system
+    # ^ replace w/ yer fave
+
+add the following `extensionProviders` stanza
+
+```yaml
+apiVersion: v1
+data:
+  mesh: |-
+    # Add the following contents:
+    extensionProviders:
+    - name: "opa.default"
+      envoyExtAuthzGrpc:
+        service: "opa.default.svc.cluster.local"
+        port: "9191"
+```
+
+Notice there's an Istio custom authz policy in the `auto` dir that'll
+get deployed later automatically and that configures the ingress gateway
+to forward traffic to our OPA service. Also, there's a bit more info
+about our OPA setup [over here][deploy.opa].
+
+
+### 4. ArgoCD
 
 We'll use [ArgoCD][argocd] to implement a GitOps workflow whereby any
 changes we make to the K8s descriptors in our repo get deployed automatically
@@ -134,6 +174,8 @@ namespace yet. Cluster ready, mission accomplished, cool bananas!
 [argocd]: https://argoproj.github.io/argo-cd/
 [deploy.argocd]: ./manual/argocd/README.md
 [deploy.istio]: ./manual/istio/README.md
+[deploy.opa]: ./manual/opa/istio/README.md
 [istio]: https://istio.io/
 [minikube]: https://minikube.sigs.k8s.io/
 [minikube.node-port]: https://minikube.sigs.k8s.io/docs/handbook/accessing/#getting-the-nodeport-using-kubectl
+[opa]: https://www.openpolicyagent.org/

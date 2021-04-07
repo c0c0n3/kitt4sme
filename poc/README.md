@@ -144,12 +144,21 @@ examples:
 
 As an added bonus, if you followed the [deployment instructions][poc.deploy]
 to a tee (you did, didn't you?!), then you've taken your first sip
-of the compose secret potion. What's next? Try concocting your own
-diagnose/compose and sense/intervene scenarios. Try integrating your
-AI modules or RAMP dashboards. Fool around with persistence and
-security. The world is your oyster! Oh, it'll be nice if you could
-share your scenarios or even better put together some scripts to
-help others reproduce what you've done :-)
+of the KITT4SME compose secret potion. But there's more. If you open
+up the scripts, you'll see that whereas the version scripts hit the
+FIWARE API endpoints without any credentials, access to all the other
+FIWARE endpoints require a valid JWT. In fact, when an external request
+hits any of those endpoints, the ingress gateway asks our OPA service
+if it can go ahead with forwarding the request to the target endpoint.
+OPA only ever says yes if the tenant in the FIWARE service header is
+the same as that in the JWT—have a look at `service.rego` in
+`poc/deployment/manual/opa/rego` for the details.
+
+What's next? Try concocting your own diagnose/compose and sense/intervene
+scenarios. Try integrating your AI modules or RAMP dashboards. Fool
+around with persistence and security. The world is your oyster! Oh,
+wouldn't it be nice if you shared your scenarios or even better put
+together some scripts to help others reproduce what you've done :-)
 
 
 
