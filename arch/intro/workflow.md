@@ -25,7 +25,7 @@ Perhaps it helps to think of the shop floor as a ginormous dynamical
 system where we try to measure its current state with some degree of
 accuracy so we can use the dynamics function (think AI model) to tell
 if the shop floor is en route for a good or bad outcome, as shown in
-the picture above.
+the picture above with a sad emoticon face.
 
 In the intervene step, the system suggests and negotiates corrective
 actions to steer the shop floor towards the desired production and
