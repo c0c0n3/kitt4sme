@@ -11,6 +11,7 @@ Reference Architecture
 ### Views
 
 * [Conceptual view][view.conceptual]
+* [Information model][view.data]
 * [Cloud infrastructure][view.cloud]
 
 
@@ -20,4 +21,5 @@ Reference Architecture
 [intro.workflow]: ./intro/workflow.md
 [intro.platform]: ./intro/platform.md
 [view.conceptual]: ./conceptual-view/system-decomposition.md
+[view.data]: ./interop/data.md
 [view.cloud]: ./cloud-infra/distrib.md

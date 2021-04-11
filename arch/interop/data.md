@@ -16,9 +16,9 @@ the platform itself, components which were not originally designed to
 work together have to exchange information in order to perform KITT4SME
 workflow tasks. For data to be exchanged and processed meaningfully
 in a distributed system, processes have to agree on data formats and
-semantics as well as on a communication mechanism. This chapter explains
+semantics as well as on a communication mechanism. This section explains
 how the KITT4SME platform achieves data interoperability through the
-adoption of the NGSI standard, whereas later chapters address inter-process
+adoption of the NGSI standard, whereas later section address inter-process
 communication.
 
 
@@ -75,7 +75,7 @@ are instances of links among NGSI data structures in a given NGSI data
 model. The KITT4SME project will develop NGSI data models for the manufacturing
 industry in order to achieve semantic interoperability of platform components.
 (As separate document detailing said data models will be provided in due
-course.** A data translation layer at the platform's boundary maps external
+course.) A data translation layer at the platform's boundary maps external
 data to instances of NGSI entities in accordance with the KITT4SME NGSI
 data models. The building blocks of this layer are the FIWARE agents,
 software components that can interface with external systems using widely
@@ -83,6 +83,9 @@ implemented standards such as OPC UA and ROS. Agents can be easily configured
 to translate data coming from external systems to a common format that
 the rest of the platform components know how to handle, namely the NGSI
 data format.
+
+
+**TODO**: refs/cites for specs, papers, etc.
 
 
 ### Core FIWARE data model
