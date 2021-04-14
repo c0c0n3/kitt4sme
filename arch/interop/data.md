@@ -82,10 +82,15 @@ software components that can interface with external systems using widely
 implemented standards such as OPC UA and ROS. Agents can be easily configured
 to translate data coming from external systems to a common format that
 the rest of the platform components know how to handle, namely the NGSI
-data format.
+data format. It should also be noted that the NGSI specification is a
+widely adopted open source standard. Therefore, the KITT4SME platform
+will be interoperable with any external Web service capable of understanding
+the NGSI data format. Furthermore, data sets originating from different
+NGSI sites can be combined in a multi-site distributed system using the
+federation framework provided by Context Broker.
 
 
-**TODO**: refs/cites for specs, papers, etc.
+**TODO**: refs/cites ⟶ specs, papers, etc.
 
 
 ### Core data model
@@ -184,21 +189,171 @@ is a string assembled by joining the labels identifying the inner nodes
 in the path from the root to the last node using a slash character as
 a separator. For instance, the tree path `root ⟶ factory1 ⟶ floor2`
 would be encoded as `/factory1/floor2`. The concept of a `Service` furnishes
-the data modeller with an even stronger mechanism to separate entities
+the data architect with an even stronger mechanism to separate entities
 into disjoint groups: all the entities in the system are partitioned
 by service. Thus, entities in one service partition are isolated from
-the entities in another partition. This mechanism is used in practice
-to implement multi-tenancy...
-
-
-**TODO**
-* meat of the matter: turn the diagram below into words
-* complement: example of IoT to NGSI data from sense-intervene diagram
-* also: lift content from questions already answered in DMP
+the entities in any another partition. Often FIWARE-based cloud solutions
+exploit this mechanism to implement multi-tenancy: a tenant (typically
+a company utilising the cloud's services) is identified with a FIWARE
+`Service` so that their data, i.e. the entity hierarchies they own, are
+not accessible to other tenants (FIWARE `Service` instances) in the system.
+FIWARE `Service`s are identified by unique text labels which clients
+wanting to access entity data must specify through the `fiware-service`
+HTTP header. The UML class diagram below models the concepts of entities,
+attributes, entity hierarchies and services as explained thus far and
+introduces some new concepts regarding device provisioning and a
+publish-subscribe mechanism to which we are going to turn our attention
+next.
 
 ![FIWARE core data model.][dia-data-model]
+
+A fundamental concept of any IoT system is that of a physical object
+(a "thing") equipped with hardware and software which allows it to sense
+its environment, exchange data and possibly perform actions in response
+to software commands. Any such external device can be connected to a
+FIWARE system so that FIWARE services can use any data which it produces
+or issue commands to operate it. The process of interfacing a device with
+a FIWARE system is often referred to as "provisioning" the device. The
+two key data structures to enable this process in FIWARE are the `Device`
+and the `ServiceGroup`. The `Device` structure holds the information
+needed to interface with a physical device. Its `id` field uniquely
+identifies the physical device within a FIWARE system whereas the `protocol`
+field specifies the communication protocol to be used to interact with
+the device, e.g. OPC UA. As explained earlier, within FIWARE data are
+encoded through `Entity` structures and external data need to be converted
+to `Entity` instances for FIWARE services to be able to use those data.
+Consequently, a `Device` is paired with an `Entity` and specifies a
+translation map to be used by FIWARE Agents to convert external data
+to an instance of the `Entity` associated with the `Device`. In most
+cases, the translation map is a list of transformation instructions
+from external data fields to `Attribute`s, however it is also possible
+to specify more sophisticated data transformations.
+
+Perhaps an example is in order. Recall the [brief discussion][intro.plat.s-i]
+from the introduction section about leveraging FIWARE to provide an
+interoperable communication infrastructure to support the Sense and
+Intervene phases of the KITT4SME workflow. The diagram accompanying
+the text showed the devices owned by two manufacturing companies streaming
+readings to the platform. One stream contained the following labelled
+measurements
+
+    f: 3
+    b: 7
+
+supposedly sent by the `foodev` device through a certain protocol `P`.
+On crossing the platform boundary, the data were converted to an NGSI
+entity
+
+```json
+{
+    "id":   "urn:ngsi-ld:manufracture:Bot:1",
+    "type": "Bot",
+    "foo": {
+        "type": "Integer",
+        "value": 3
+    },
+    "bar": {
+        "type": "Integer",
+        "value": 7
+    }
+}
+```
+
+This is a typical scenario indeed and involves configuring a FIWARE
+Agent which can handle protocol `P` on the receiving end. The Agent
+would be provisioned with a `Device` instance specifying the external
+device ID, the target entity ID and a description of how to transform
+the external data fields into entity attributes as in the JSON document
+below.
+
+
+```json
+{
+    "device_id":   "foodev",
+    "entity_name": "urn:ngsi-ld:manufracture:Bot:1",
+    "entity_type": "Bot",
+    "attributes": [
+        { "object_id": "f", "name": "foo", "type": "Integer" },
+        { "object_id": "b", "name": "bar", "type": "Integer" }
+    ]
+}
+```
+
+Each `Device` instance identifies a physical device. Hence, there must
+be one instance in correspondence of each physical device linked to the
+system through the provisioning process. `Device` instances sharing the
+same target `Entity` type are collected together in a `ServiceGroup`.
+A `ServiceGroup` defines the Agent service endpoint which the physical
+devices in the group use to communicate with FIWARE. In order to send
+data, physical devices need to know to which `ServiceGroup` they belong.
+The API key field of a `ServiceGroup` serves the purpose of identifying
+the group with the physical device. When sending data to the Agent endpoint,
+a physical device specifies the API key of the group to which it belongs.
+A `ServiceGroup` also contains the URL of the Context Broker to which
+data should be forwarded after having being transformed into an NGSI
+entity. (Recall that Context Broker is the service which maintains the
+entities constituting the current state of the system.) The following
+JSON document exemplifies how to create a `ServiceGroup` for an HTTP
+endpoint to service devices configured with a target entity type of `Bot`.
+
+```json
+{
+    "apikey":      "3z4w",
+    "cbroker":     "http://orion:1026",
+    "entity_type": "Bot",
+    "resource":    "/iot/d"
+}
+```
+
+A physical device having a corresponding `Device` instance in this
+`ServiceGroup` would construct the URL of the service endpoint by setting
+the path component to the value of the `resource` field and then appending
+a query string containing the API key and the ID of its `Device` instance
+as in the URL below which shows the path and query which the device `foodev`
+would construct to call the Agent endpoint:
+
+    /iot/d?i=foodev&k=3z4w
+
+An important aspect of the KITT4SME architecture is the publish-subscribe
+mechanism through which changes to the IoT context (system data) held
+by Context Broker are propagated to other services. Any service can observe
+changes to the IoT context by creating a `Subscription` with Context Broker.
+To create a `Subscription`, the service (the `Subscriber`) specifies an
+HTTP endpoint where Context Broker can send state change notifications
+and an entity predicate (condition) `p` which, when true, will trigger
+the notification. More accurately, for any entity `e` in the IoT context
+if a change occurs to `e` (e.g., a device sends new readings) resulting
+in a new entity state `e'` and `p(e')` evaluates to true, then Context
+Broker sends `e'` to the subscriber. Subscribers can also instruct Context
+Broker to send a subset of the changed entity data instead of the whole
+entity `e'`. This is done by specifying a list of attributes `[a, b, ...]`
+in the subscription so that Context Broker will only include the corresponding
+attribute values in the notification. For instance, a subscriber could
+create a subscription to get notified of any change to entities of type
+`Bot` from the previous example but request that only the current data
+of the `foo` attribute be included in the notification.
+
+This publish-subscribe pattern serves as the primary means through which
+KITT4SME services can keep abreast of any change in the shop floor and
+possibly react with corrective actions or recommendations as the case
+may be. In other words, publish-subscribe sits at the core of the communication
+infrastructure that supports the Sense and Intervene phases of the KITT4SME
+workflow. Moreover, it is also what enables the construction of time
+series from IoT context data. In fact, the KITT4SME platform features
+a time-series service whose purpose is to maintain a historical record
+of the IoT context which Context Broker makes available. The time-series
+service is notified of IoT context changes and records any modifications
+to NGSI entities. It constructs a time-indexed sequence of changes for
+each entity: `{ (t0, e0), (t1, e1), … }`, where `t0` is the time when
+the entity was created and `e0` is the initial entity data; `e1` is the
+entity data as it was at time `t1` when the entity was modified; and
+so on. Thus each entity has an associated sequence of real numbers (the
+time index values `t0`, `t1`, …) which identify the changes to that entity
+over time. In other words, the entity data is versioned by the time
+index numbers.
 
 
 
 
 [dia-data-model]: ./fiware-data-model.png
+[intro.plat.s-i]: ../intro/platform.md#senseintervene
