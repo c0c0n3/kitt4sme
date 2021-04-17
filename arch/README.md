@@ -33,7 +33,8 @@ with new functionality.
       how we're thinking of supporting the KITT4SME workflow in software.
       (Notice there's more to the KITT4SME workflow than just software, but
       here we're only focusing on software.)
-    - Scope and audience.
+    - [About this document][intro.about]. Scope of this document, the approach
+      followed to write it and its intended audience.
     - [Document overview][intro.overview].
 2. [System requirements][view.req]. An account of functional requirements
    and system quality attributes which shape the architecture.
@@ -92,6 +93,7 @@ In fact, this is what's in the DoA
 
 
 [conclusion]: ./conclusion.md
+[intro.about]: ./intro/about.md
 [into.motivation]: ./intro/motivation.md
 [intro.overview]: ./intro/overview.md
 [intro.platform]: ./intro/platform.md
