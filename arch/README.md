@@ -17,7 +17,8 @@ with new functionality.
   narrative. Also, we should probably convert them to vector graphics
   for publication.
 * Existing prose needs to be massaged into formal style before publication.
-  Exception: info model got rewritten in formal style.
+  Exceptions: [info model][view.data] and [about section][intro.about]
+  got rewritten in formal style.
 * Partner contribs wanted!
 
 
@@ -48,7 +49,8 @@ with new functionality.
     - Pub/sub and IoT context propagation.
     - mesh & traffic management.
 6. **Persistence**.
-    - Time series
+    - [Time series][view.times-series]. How to take advantage of NGSI pub/sub
+      to implement IoT time-series services.
     - ...
 7. **Security**.
     - Istio & OPA (~> document prototype's code)
@@ -69,7 +71,7 @@ with new functionality.
    especially w/r/t pilots & open calls.
     - [Platform prototype][proto]. Demo cluster we've built to test out our
       ideas and try out scenarios to validate the architecture.
-    - [Scenarios][view.scenarios]. A sketch of the scenarios we think are
+    - [Scenarios][scenarios]. A sketch of the scenarios we think are
       representative of how the platform will be used and how we tested
       them with the prototype.
 13. [Conclusion][conclusion].
@@ -99,7 +101,8 @@ In fact, this is what's in the DoA
 [intro.platform]: ./intro/platform.md
 [intro.workflow]: ./intro/workflow.md
 [proto]: ../poc/README.md
+[scenarios]: ./scenarios.md
 [view.conceptual]: ./conceptual-view/system-decomposition.md
 [view.data]: ./interop/data.md
-[view.scenarios]: ./scenarios.md
 [view.req]: ./requirements.md
+[view.times-series]: ./interop/time-series.md
