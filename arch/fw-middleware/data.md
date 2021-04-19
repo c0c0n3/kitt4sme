@@ -355,5 +355,5 @@ index numbers.
 
 
 
-[dia-data-model]: ./fiware-data-model.png
+[dia-data-model]: ./data-model.png
 [intro.plat.s-i]: ../intro/platform.md#senseintervene
