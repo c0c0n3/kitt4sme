@@ -103,6 +103,6 @@ In fact, this is what's in the DoA
 [proto]: ../poc/README.md
 [scenarios]: ./scenarios.md
 [view.conceptual]: ./conceptual-view/system-decomposition.md
-[view.data]: ./interop/data.md
+[view.data]: ./fw-middleware/data.md
 [view.req]: ./requirements.md
-[view.times-series]: ./interop/time-series.md
+[view.times-series]: ./fw-middleware/time-series.md
