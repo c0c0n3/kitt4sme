@@ -17,8 +17,8 @@ with new functionality.
   narrative. Also, we should probably convert them to vector graphics
   for publication.
 * Existing prose needs to be massaged into formal style before publication.
-  Exceptions: [info model][view.data] and [about section][intro.about]
-  got rewritten in formal style.
+  Exceptions: [about section][intro.about], [info model][view.data], and
+  [CI/GitOps][view.ci] sections got rewritten in formal style.
 * Partner contribs wanted!
 
 
