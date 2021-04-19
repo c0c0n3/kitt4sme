@@ -25,7 +25,7 @@ components and an edge tells you how two components can be assembled
 in a working configuration, that is a tailor-made kit for an SME. In
 practice, in correspondence of each kit config that the diagnose step
 spits out, there will be a set of deployment descriptors (think Docker
-Compose or K8s Helm charts) that make up that kit's services package
+Compose or K8s Helm charts) that make up that kit's package of services
 to be deployed on the cloud instance running the FIWARE service mesh
 which provides the communication, security and persistence backbone
 as well as an interface to external IDS services.
@@ -61,8 +61,12 @@ the foobie device can understand.
 
 Surely road safety is very important too. Nobody wants to get
 into a nasty accident on a highway which is why we'll have to
-make sure data can travel safely on our highway, using encryption
-where appropriate. Also the security infrastructure will have
+make sure data can travel safely on our highway. In fact, depending
+on the deployment scenario, part or even all of this communication
+highway could sit in the cloud, so it's very important to use secure
+communication channels and encryption where appropriate. For example,
+hijacking commands from the cloud to the factory could have a disastrous
+impact on the production line. Also the security infrastructure will have
 to cater to multi-tenant scenarios like we see here with two
 different companies sharing the same cloud stack, making sure
 data is kept private to their respective owners or shared in
