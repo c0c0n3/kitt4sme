@@ -63,7 +63,8 @@ with new functionality.
 9. Deployment and operation.
     - service mesh
     - IoT provisioning.
-    - Continuous integration and GitOps.
+    - [Continuous integration and GitOps][view.ci]. Btw, this is also how
+      we can support Diagnose/Compose.
     - Observability.
 10. Marketplace.
 11. Quality assurance.
@@ -102,6 +103,7 @@ In fact, this is what's in the DoA
 [intro.workflow]: ./intro/workflow.md
 [proto]: ../poc/README.md
 [scenarios]: ./scenarios.md
+[view.ci]: ./mesh/gitops.md
 [view.conceptual]: ./conceptual-view/system-decomposition.md
 [view.data]: ./fw-middleware/data.md
 [view.req]: ./requirements.md
