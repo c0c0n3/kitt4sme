@@ -46,7 +46,7 @@ with new functionality.
 5. **Message passing mechanics**. Distributed communication protocols and
    synchronisation, message routing and manipulation.
     - NGSI REST services.
-    - Pub/sub and IoT context propagation.
+    - [Pub/sub and IoT context propagation][view.pub-sub].
     - mesh & traffic management.
 6. **Persistence**.
     - [Time series][view.times-series]. How to take advantage of NGSI pub/sub
@@ -62,7 +62,7 @@ with new functionality.
     - ...
 9. Deployment and operation.
     - service mesh
-    - IoT provisioning.
+    - [IoT provisioning][view.provisioning].
     - [Continuous integration and GitOps][view.ci]. Btw, this is also how
       we can support Diagnose/Compose.
     - Observability.
@@ -106,5 +106,7 @@ In fact, this is what's in the DoA
 [view.ci]: ./mesh/gitops.md
 [view.conceptual]: ./conceptual-view/system-decomposition.md
 [view.data]: ./fw-middleware/data.md
+[view.provisioning]: ./fw-middleware/provisioning.md
+[view.pub-sub]: ./fw-middleware/ctx-change-propagation.md
 [view.req]: ./requirements.md
 [view.times-series]: ./fw-middleware/time-series.md
