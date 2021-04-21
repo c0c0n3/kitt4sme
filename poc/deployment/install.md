@@ -58,6 +58,21 @@ core and telemetry addons---Grafana, Jaeger, Kiali and Prometheus:
                        -y --verify
     $ kubectl apply -f poc/deployment/manual/istio/addons
 
+Eyeball the output of the last command to install the add-ons, if you
+spot a bunch of messages like this
+
+    unable to recognize "poc/deployment/manual/istio/addons/kiali.yaml":
+      no matches for kind "MonitoringDashboard"
+      in version "monitoring.kiali.io/v1alpha1"
+
+wait a minute, then rerun the command
+
+    $ kubectl apply -f poc/deployment/manual/istio/addons
+
+Sometimes the Kiali monitoring dashboard CDR doesn't get created quick
+enough so some of the other installation instructions in `kiali.yaml`
+fail.
+
 A bit more detail about all this stuff is [over here][deploy.istio].
 This installation profile isn't configured for prod, but it has all
 the services we'll need---Istio core, ingress/egress, and dashboards.
@@ -118,8 +133,13 @@ our Minikube cluster
     $ kubectl create namespace argocd
     $ kubectl apply -n argocd -f poc/deployment/manual/argocd
 
-Now you should be able to reach the ArgoCD server on port `8080` from
-outside the cluster, e.g. on MacOS
+Give your cluster a couple of minutes to sort itself out and start the
+ArgoCD services. Check what's going on with
+
+    $ kubectl -n argocd get pods
+
+When all the pods are running you should be able to reach the ArgoCD
+server on port `8080` from outside the cluster, e.g. on MacOS
 
     $ open http://$(minikube ip -p kitt4sme):8080
     # use e.g. xdg-open on Linux, or just the name of your browser command
