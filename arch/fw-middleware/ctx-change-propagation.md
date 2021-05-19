@@ -69,7 +69,7 @@ HTTP protocol, a thread would have to block until the subscriber returned
 an HTTP response. The larger the number of threads blocked on IO, the
 smaller the number of subscribers that can be notified per second and
 the higher the Context Broker resource load which in turn affects the
-rate at which producer data (e.g. new readings from the shop floor** can
+rate at which producer data (e.g. new readings from the shop floor) can
 be acquired. To alleviate performance bottlenecks, subscribers should
 be programmed to process notifications expeditiously or to perform the
 actual processing asynchronously, e.g., by enqueueing a job to a separate
@@ -197,7 +197,7 @@ body contains the actual NGSI entity `β` just assembled from the original
 device readings. Step 4 in the diagram illustrates this interaction.
 
 #### Update and notification
-At this point, context-broker saves `β` to its database and evaluates
+At this point, `context-broker` saves `β` to its database and evaluates
 the predicate `p` defined by `bar-monitor`'s subscription. As `p(β)`
 evaluates to true, `context-broker` proceeds to send a state change
 notification to `bar-monitor`. This notification is an HTTP `POST`
