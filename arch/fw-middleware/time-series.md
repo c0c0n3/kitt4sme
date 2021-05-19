@@ -80,7 +80,7 @@ hits the IoT agent's device data port (commonly called "iota-south")
 with a UL 2 payload containing a new temperature reading, the shop
 floor coordinates (top left and bottom right corners) and a reading
 timestamp. As we've seen already, agents are configured to translate
-external data to NGSI entities and forward them to Context Broker to
+external data into NGSI entities and forward them to Context Broker to
 update the IoT context. The time-series service has a subscription
 with Context Broker (the publisher) to get notified of entity updates.
 So as soon as Context Broker receives the entity update, it notifies
