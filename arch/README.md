@@ -6,7 +6,7 @@ This document describes (only) the technical aspects of the KITT4SME
 architecture through a set of interlocked architectural viewpoints.
 As such, it is only aimed at developers who need to understand the
 big picture before modifying the architecture or extending the code
-with new functionality.
+with new functionality. [Read the executive summary][abstract].
 
 
 ### Document status
@@ -96,6 +96,7 @@ In fact, this is what's in the DoA
 
 
 
+[abstract]: ./abstract.md
 [conclusion]: ./conclusion.md
 [intro.about]: ./intro/about.md
 [into.motivation]: ./intro/motivation.md
