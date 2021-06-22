@@ -46,7 +46,8 @@ with new functionality. [Read the executive summary][abstract].
    how it is represented and processed, with an emphasis on interoperability.
 5. **Message passing mechanics**. Distributed communication protocols and
    synchronisation, message routing and manipulation.
-    - NGSI REST services.
+    - [RESTful services][rest].
+    - NGSI services.
     - [Pub/sub and IoT context propagation][view.pub-sub].
     - mesh & traffic management.
 6. **Persistence**.
@@ -104,6 +105,7 @@ In fact, this is what's in the DoA
 [intro.platform]: ./intro/platform.md
 [intro.workflow]: ./intro/workflow.md
 [proto]: ../poc/README.md
+[rest]: ./rest.md
 [scenarios]: ./scenarios.md
 [view.ci]: ./mesh/gitops.md
 [view.conceptual]: ./conceptual-view/system-decomposition.md
