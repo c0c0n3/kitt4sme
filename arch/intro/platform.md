@@ -2,6 +2,16 @@ Cloud platform
 --------------
 > Supporting the Kitt4Sme workflow.
 
+Having introduced the KITT4SME workflow, we are now ready to present
+a high-level, conceptual view of the software platform through which
+it is implemented. Note that the KITT4SME workflow comprises a rich
+set of activities some of which are carried out through a software
+system or are only partially supported by software. However, in the
+following we only focus on the aspects of the workflow which require
+a software infrastructure to be performed. The interested reader is
+referred to the original proposal to learn more about the details of
+the KITT4SME workflow activities.
+
 So where does all this leave us? Well, we could say that the main
 goal of the reference architecture is to define the software infrastructure
 to support the Kitt4Sme workflow and AI modules. But this is a bit

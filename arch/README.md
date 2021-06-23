@@ -13,25 +13,19 @@ with new functionality. [Read the executive summary][abstract].
 
 **WIP!!**
 
-* Diagrams sum up discussions and design decisions so far but need
-  narrative. Also, we should probably convert them to vector graphics
-  for publication.
-* Existing prose needs to be massaged into formal style before publication.
-  Exceptions: [about section][intro.about], [info model][view.data],
-  [pub/sub][view.pub-sub] and [CI/GitOps][view.ci] sections got rewritten
-  in formal style.
+* See: https://github.com/c0c0n3/kitt4sme/projects/1
 * Partner contribs wanted!
 
 
 ### Table of contents
 
-1. **Introduction**. The basic ideas are summarised here and then further
-   developed in subsequent sections.
+1. [Introduction][intro]. The basic ideas are summarised here and then
+   further developed in subsequent sections.
     - [Project background][into.motivation]. Motivation and value proposition,
       or why we're doing this.
     - [KITT4SME workflow][intro.workflow]. Delivering AI to the manufacturing
       industry through the famed KITT4SME workflow :-)
-    - [Platform concept][intro.platform]. Lunar-orbit, non-technical view of
+    - [Platform concept][intro.platform]. Lunar-orbit, conceptual view of
       how we're thinking of supporting the KITT4SME workflow in software.
       (Notice there's more to the KITT4SME workflow than just software, but
       here we're only focusing on software.)
@@ -99,6 +93,7 @@ In fact, this is what's in the DoA
 
 [abstract]: ./abstract.md
 [conclusion]: ./conclusion.md
+[intro]: ./intro/README.md
 [intro.about]: ./intro/about.md
 [into.motivation]: ./intro/motivation.md
 [intro.overview]: ./intro/overview.md
