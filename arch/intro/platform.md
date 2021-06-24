@@ -12,11 +12,12 @@ a software infrastructure to be performed. The interested reader is
 referred to the original proposal to learn more about the details of
 the KITT4SME workflow activities.
 
-So where does all this leave us? Well, we could say that the main
-goal of the reference architecture is to define the software infrastructure
-to support the Kitt4Sme workflow and AI modules. But this is a bit
-of a vague, catch-all statement, so we should put flesh on the bones
-of it.
+One of the main goals of the reference architecture is to define the
+software infrastructure to support the KITT4SME workflow and the AI
+services. We begin with introducing the concepts and principles which
+constitute the foundation of the architecture. Then we proceed to show
+how the platform supports the Diagnose, Compose, Sense and Intervene
+steps of the KITT4SME workflow.
 
 
 ### Key concepts and guiding principles
@@ -182,72 +183,82 @@ different services. However, most services are expected to provide their
 functionality through REST APIs as noted earlier.
 
 
-### Diagnose/Compose
-Let's start with a quick look at the key elements of the software
-infrastructure that was proposed to support the Kitt4Sme Diagnose
-and Compose steps. Keep in mind this is very high level, like looking
-at it from the moon kind of thing and later on, the technical sections
-will fill the gaps. Here's what it looks like at a glance.
+### Diagnose and Compose
+Having outlined the foundational ideas, we can begin to look at the
+key elements of the software infrastructure which support the Diagnose
+and Compose steps of the KITT4SME workflow. The following material is
+only meant to furnish the reader with a conceptual, bird's eye view
+of how the Diagnose and Compose steps relate to the software infrastructure.
+Later, more technical sections will fill the gaps. The following informal
+diagram shows structure and behaviour at a glance.
 
 ![Infrastructure to support the diagnose & compose steps.][dia-comp-infra.dia]
 
-In relation to diagnose & compose, we have an integration point with
+In relation to Diagnose and Compose, there is an integration point with
 the RAMP platform to provide a mechanism whereby existing as well as
-new AI modules can be composed in a working system configuration.
-From a very abstract standpoint we've got a graph where nodes are
-components and an edge tells you how two components can be assembled
-in a working configuration, that is a tailor-made kit for an SME. In
-practice, in correspondence of each kit config that the diagnose step
-spits out, there will be a set of deployment descriptors (think Docker
-Compose or K8s Helm charts) that make up that kit's package of services
-to be deployed on the cloud instance running the FIWARE service mesh
-which provides the communication, security and persistence backbone
-as well as an interface to external IDS services.
+new AI components can be composed in a working system configuration.
+From a very abstract standpoint, the situation can be modelled with a
+graph where nodes are components and an edge specifies how two components
+can be assembled in a working configuration, that is a tailor-made kit
+for a factory. In practice, in correspondence of each kit configuration
+that the Diagnose step outputs, there will be a set of deployment descriptors
+(e.g. Docker Compose or Kubernetes Helm charts). This set of descriptors
+comprise the kit's package of services to be deployed on the cloud
+instance running the FIWARE service mesh which provides the communication,
+security and persistence backbone as well as an interface to external
+IDS services.
 
-**TODO** challenges
 
+### Sense and Intervene
+In relation to the Sense phase of the KITT4SME workflow, the platform
+is expected to be able to acquire data from the shop floor through a
+diverse range of IoT devices and cyber-physical systems such as wearable
+devices, environmental sensors, cameras and robots. Data can flow in
+the other direction too, i.e. from the platform to the shop floor, as
+AI components issue commands to control devices or suggest corrective
+actions during the Intervene phase of the KITT4SME workflow.
 
-### Sense/Intervene
-With diagnose & compose under our belt, let's see what it takes
-to support the sense and intervene steps. Again, here's the lunar-orbit
-picture.
+The following informal diagram shows how the platform supports the
+Sense and Intervene steps. As for Diagnose and Compose earlier, the
+diagram and the below explanation are only meant to be suggestive of
+the actual platform implementation.
 
 ![Infrastructure to support the sense & intervene steps.][sen-int-infra.dia]
 
-Our job here is to build an information highway so data can travel
+The platform provides an "information highway" so that data can travel
 from the shop floor to the AI brain and from the AI to the factory.
-In the diagram, we see two companies, aptly called ManuFracture
-and Smithereens, whose devices are pumping raw measurements into
-the system backbone. As data travels along, it gets converted
-and refined so AI modules and KPI dashboards can process it.
+The diagram depicts two fictitious manufacturing companies, aptly called
+ManuFracture and Smithereens, whose devices are sending raw measurements
+to the system backbone. As data travel along, they are converted and
+refined so that AI components and KPI dashboards can process it.
 Our thinking here is that the system backbone will be the FIWARE
-middleware, and components will exchange data in the NGSI-LD
-format using NGSI REST APIs. So for example, the `foo` and `bar`
-interfaces the AI piggybacks on in the diagram should be REST
-resources having an NGSI-LD representation you can manipulate
-through NGSI REST operations.
-In the other direction, the intervene lane, things work pretty
-much the same. Yah, like same same but different, you know. The
-diagram shows the AI sniffing out a `bar` value that's too high
-so it issues a high-level, human-understandable command to reset
-bar to a decent value which eventually gets translated to a command
-the foobie device can understand.
+middleware, and components will exchange data in the NGSI
+format using NGSI REST APIs. Thus for example, the `foo` and `bar`
+interfaces on which the AI components rely should be REST resources
+having an NGSI representation which can be manipulated through NGSI
+REST operations.
+In the other direction, the Intervene lane, things work similarly.
+The diagram shows the AI detecting a `bar` value which is too high
+therefore it issues a high-level, human-understandable command to
+reset `bar` to an acceptable level. This high-level command is eventually
+translated to a command the `foobie` device can understand.
 
-Surely road safety is very important too. Nobody wants to get
-into a nasty accident on a highway which is why we'll have to
-make sure data can travel safely on our highway. In fact, depending
-on the deployment scenario, part or even all of this communication
-highway could sit in the cloud, so it's very important to use secure
-communication channels and encryption where appropriate. For example,
-hijacking commands from the cloud to the factory could have a disastrous
-impact on the production line. Also the security infrastructure will have
-to cater to multi-tenant scenarios like we see here with two
-different companies sharing the same cloud stack, making sure
-data is kept private to their respective owners or shared in
-ways the owner can control. Proper authentication & authorisation
-will have to be in place and data exchanges traced. Our plan
-for security is to rely on open standards like OAuth2 and OpenID
-Connect which are fully supported by FIWARE.
+Continuing with the road analogy, road safety is very important too.
+Accidents on any highway should be avoided at all costs, which is why
+the platform ensures that data can travel safely on the KITT4SME highway.
+In fact, depending on the deployment scenario, part or even all of this
+communication highway could sit in the cloud. Therefore, it is imperative
+to use secure communication channels and encryption where appropriate.
+For example, hijacking commands from the cloud to the factory could
+have a disastrous impact on a production line. Moreover, the security
+infrastructure caters to multi-tenant scenarios as depicted in the diagram
+where two different companies share the same cloud stack. The platform
+allows to define and enforce security policies to ensure that data
+are kept private to their respective owners or shared in ways the owner
+can control. Proper authentication and authorisation are in place too
+and data exchanges traced. Our plan for security is to rely on open
+standards like OAuth2 and OpenID Connect which are fully supported
+by FIWARE.
 
 
 
