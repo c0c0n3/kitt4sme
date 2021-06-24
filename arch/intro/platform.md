@@ -18,13 +18,43 @@ to support the Kitt4Sme workflow and AI modules. But this is a bit
 of a vague, catch-all statement, so we should put flesh on the bones
 of it.
 
-### Guiding principles
-The basic idea is that of a service mesh, multi-tenant, cloud architecture
-to assemble AI components from a marketplace into a tailor-made service
-offering for a factory, connect these components to the shop floor,
-and enables them to store and exchange data in an interoperable, secure,
-privacy-preserving and scalable way. The platform design revolves around
-the key concepts and principles outlined below.
+
+### Key concepts and guiding principles
+The KITT4SME (software) platform is a service mesh, multi-tenant, cloud
+architecture designed to assemble AI components from a marketplace into
+a tailor-made service offering for a factory, connect these components
+to the shop floor, and enable them to store and exchange data in an
+interoperable, secure, privacy-preserving and scalable way. The KITT4SME
+platform comprises loosely-coupled Web services that run in a cluster
+environment and relies on a dedicated cluster software infrastructure.
+The platform design revolves around the key concepts and principles
+outlined below.
+
+#### Key software stacks
+The KITT4SME platform relies on a dedicated cluster software infrastructure.
+This cluster software, referred to as "mesh infrastructure" in the following,
+orchestrates the deployment and operation of services and provides a
+uniform, programmable interface to computational resources (CPU, memory,
+storage) across cluster nodes. Additionally, the mesh infrastructure
+provides a programmable interface to manage, secure and observe service
+traffic independently of services. Kubernetes together with Istio form
+the preferred software stack to provide the mesh infrastructure, although
+similar products may be employed. In any case, it should be noted that
+several cloud providers offer the whole mesh infrastructure as a managed
+service which would dramatically simplify the implementation of the
+KITT4SME platform if running the KITT4SME services in a commercial cloud
+were an option. (Whether that may be the case is still not clear at the
+time of writing.)
+
+Purely from a software standpoint, a key project objective is to combine
+both the FIWARE and RAMP platforms in a unique software offering tailored
+to the manufacturing industry. FIWARE is an open-source platform to build
+Internet of Things (IoT) applications. It provides the building blocks to
+acquire data from the shop floor and create a digital representation of
+it which can then be queried and manipulated to control physical devices
+in the factory, e.g. stop a conveyor belt. RAMP is a digital marketplace
+where Smart industry solution providers can offer their software to
+manufacturing industry customers.
 
 #### Platform services
 A service is a distinct part of the platform that provides some functionality
@@ -78,6 +108,21 @@ enrich services with non-functional features (e.g. security) and enhance
 overall quality of service (e.g. performance). Communicating parties
 have no knowledge of intermediaries.
 
+#### Open standards and interoperability
+Services have to exchange information in order to perform KITT4SME
+workflow tasks. For data to be exchanged and processed meaningfully,
+services have to agree on data formats and semantics as well as on a
+communication mechanism. The KITT4SME platform adopts open communication
+and data standards to foster service interoperability.
+
+As noted earlier grounding service API design on REST principles ensures
+a standard, uniform communication mechanism among services and facilitates
+the creation of new services by combining existing ones. Furthermore,
+KITT4SME embraces the NGSI standard to develop ontologies for IoT data.
+Standard data models address the variation in type and nature of IoT
+data, providing a homogeneous view of the data which platform services
+can process in a uniform fashion.
+
 #### Separation of concerns
 The KITT4SME platform mesh implements a network of intermediaries to
 transparently route and balance service traffic, secure communication
@@ -114,19 +159,20 @@ reduces computational and operational costs. Service processing overhead
 is spread over many tenants as are hardware and IT operations costs.
 Resource allocation among many tenants avoids system under-utilisation,
 thus reducing overall service cost per hour. In principle, these cost
-savings should make KITT4SME services affordable even to small manufacturing
-companies on a budget.
+savings coupled with the fact that services and computing infrastructure
+are paid for on a per-usage basis rather than purchased should make
+KITT4SME services affordable even to small manufacturing companies
+on a budget.
 
-#### Open standards and interoperability
-TODO
-
-### Deployment
-TODO
-* containerisation, services get packaged in container images and
-  these images are made available in a repository accessible from
-  the platform.
-* IaC
-* Continuous delivery / DevOps
+#### Deployment
+Service software is packaged along with operating system images which
+are then run in the cluster through operating-system level virtualisation.
+(The packaged software is often referred to as a "container image" whereas
+the term "container" refers to the isolated user space in which the
+software is executed.) Each service can be deployed independently of
+the others through an automated release process whereby the publishing
+of images and deployment instructions in an online repository triggers
+the service instantiation in the mesh infrastructure.
 
 #### Service development
 Services are typically developed independently using the most appropriate
