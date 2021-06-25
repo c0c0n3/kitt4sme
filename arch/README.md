@@ -38,7 +38,7 @@ with new functionality. [Read the executive summary][abstract].
    modularity.
 4. [Information model][view.data]. What information the system handles and
    how it is represented and processed, with an emphasis on interoperability.
-5. **Message passing mechanics**. Distributed communication protocols and
+5. **Interaction mechanics**. Distributed communication protocols and
    synchronisation, message routing and manipulation.
     - [RESTful services][rest].
     - NGSI services.
