@@ -2,36 +2,41 @@ Motivation and value proposition
 --------------------------------
 > Or why we're doing this.
 
-Let's quickly remind ourselves why we're doing this and what's the
-project's value proposition. There's obviously so much more to Kitt4Sme
-than I can possibly say in a few paragraphs but I'll try summing up
-the key aspects we should keep in mind as we design the architecture.
+We begin with reviewing the motivation behind the KITT4SME project
+and its value proposition. While there is obviously so much more to
+the KITT4SME project than it can possibly be summarised in a few paragraphs,
+we will try to briefly outline the key aspects which should be kept
+in mind in designing and evaluating the platform architecture.
 
-Perhaps it's fair to say that Kitt4Sme starts from the basic observation
-that AI has the potential to revolutionise the shop floor by upping
-product quality considerably, for example by sniffing out and fixing
-up any anomalies. AI can optimise the reconfiguration of a production
-line, potentially paving the way to lot size one production. And AI
-can even improve staff productivity by suggesting fatigue and stress
-relief measures as well as personalised training. (But can AI make
-coffee? Only time will tell :-)
+Perhaps it is fair to say that KITT4SME starts from the basic observation
+that Artificial Intelligence (AI) has the potential to revolutionise
+the shop floor by considerably increasing product quality, for example
+by detecting and correcting any anomalies. AI can optimise the reconfiguration
+of a production line, potentially paving the way to lot size one production.
+Furthermore, AI can even improve staff productivity by suggesting fatigue
+and stress relief measures as well as personalised training.
 
-The better the factory does in these areas the more profitable the
-company can potentially be. SMEs make up the backbone of the EU economy
-so the more profitable SMEs get, the stronger the EU economy gets too.
-But despite the potential benefits, very few SMEs have implemented AI
-solutions in their factories. What's stopping them from jumping on the
-AI bandwagon? As it turns out, mostly low budgets and lack of expertise.
-So the basic idea is to smash down these adoption barriers by offering
-SMEs affordable, tailor-made AI for quality, reconfiguration and HRI
-through a marketplace and an adoption support network.
+The better the factory does in these areas the more profitable the company
+can potentially be. Small and medium-sized enterprises (SMEs) constitute
+the backbone of the European economy, thus the more profitable SMEs become,
+the stronger the European economy becomes too. Nevertheless, despite
+the potential benefits, very few SMEs have implemented AI solutions
+in their factories. What is preventing them from jumping on the AI
+bandwagon? As it turns out, mostly low budgets and lack of expertise.
+The basic idea behind the KITT4SME project is to smash down these adoption
+barriers by offering SMEs affordable, tailor-made AI for quality,
+reconfiguration and human-robot interaction (HRI) through a marketplace
+and an adoption support network.
 
-Here's a causal loop diagram of sorts to show the lie of the land. An
-arrow with a `+` sign means that if you get more of the stuff in the
-tail node, you'll also get more of the stuff in the head node—e.g. more
-profitable SMEs ⟶ better economy. On the other hand, a `-` sign means
-more tail stuff leads to less head stuff—e.g. the lower the budget the
-less effective the implementation of an AI project.
+The figure below shows an (informal) causal loop diagram to visualise
+the relation among the ideas and concepts discussed thus far. An arrow
+with a `+` sign indicates that as the quantities in the tail node grow
+so do the quantities in the head node—e.g., more profitable SMEs yield
+better economy. On the other hand, a `-` sign indicates that an increase
+of the quantities in the tail node leads to a decrease of the quantities
+in the head node—e.g., the lower the budget the less effective the
+implementation of an AI project.
+
 
 ![Causal loop diagram to show motivation and value proposition.][idea]
 

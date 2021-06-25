@@ -6,47 +6,42 @@ This document describes (only) the technical aspects of the KITT4SME
 architecture through a set of interlocked architectural viewpoints.
 As such, it is only aimed at developers who need to understand the
 big picture before modifying the architecture or extending the code
-with new functionality.
+with new functionality. [Read the executive summary][abstract].
 
 
 ### Document status
 
 **WIP!!**
 
-* Diagrams sum up discussions and design decisions so far but need
-  narrative. Also, we should probably convert them to vector graphics
-  for publication.
-* Existing prose needs to be massaged into formal style before publication.
-  Exceptions: [about section][intro.about], [info model][view.data],
-  [pub/sub][view.pub-sub] and [CI/GitOps][view.ci] sections got rewritten
-  in formal style.
+* See: https://github.com/c0c0n3/kitt4sme/projects/1
 * Partner contribs wanted!
 
 
 ### Table of contents
 
-1. **Introduction**. The basic ideas are summarised here and then further
-   developed in subsequent sections.
+1. [Introduction][intro]. The basic ideas are summarised here and then
+   further developed in subsequent sections.
     - [Project background][into.motivation]. Motivation and value proposition,
       or why we're doing this.
     - [KITT4SME workflow][intro.workflow]. Delivering AI to the manufacturing
       industry through the famed KITT4SME workflow :-)
-    - [Platform concept][intro.platform]. Lunar-orbit, non-technical view of
+    - [Platform concept][intro.platform]. Lunar-orbit, conceptual view of
       how we're thinking of supporting the KITT4SME workflow in software.
       (Notice there's more to the KITT4SME workflow than just software, but
       here we're only focusing on software.)
     - [About this document][intro.about]. Scope of this document, the approach
       followed to write it and its intended audience.
     - [Document overview][intro.overview].
-2. [System requirements][view.req]. An account of functional requirements
+2. [Platform requirements][view.req]. An account of functional requirements
    and system quality attributes which shape the architecture.
 3. [System decomposition][view.conceptual]. Subsystems and components,
    modularity.
 4. [Information model][view.data]. What information the system handles and
    how it is represented and processed, with an emphasis on interoperability.
-5. **Message passing mechanics**. Distributed communication protocols and
+5. **Interaction mechanics**. Distributed communication protocols and
    synchronisation, message routing and manipulation.
-    - NGSI REST services.
+    - [RESTful services][rest].
+    - NGSI services.
     - [Pub/sub and IoT context propagation][view.pub-sub].
     - mesh & traffic management.
 6. **Persistence**.
@@ -96,13 +91,16 @@ In fact, this is what's in the DoA
 
 
 
+[abstract]: ./abstract.md
 [conclusion]: ./conclusion.md
+[intro]: ./intro/README.md
 [intro.about]: ./intro/about.md
 [into.motivation]: ./intro/motivation.md
 [intro.overview]: ./intro/overview.md
 [intro.platform]: ./intro/platform.md
 [intro.workflow]: ./intro/workflow.md
 [proto]: ../poc/README.md
+[rest]: ./rest.md
 [scenarios]: ./scenarios.md
 [view.ci]: ./mesh/gitops.md
 [view.conceptual]: ./conceptual-view/system-decomposition.md

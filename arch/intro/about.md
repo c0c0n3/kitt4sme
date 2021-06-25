@@ -1,8 +1,6 @@
-About
------
+About this document
+-------------------
 > Odds & ends.
-
-TODO find better heading!
 
 This section outlines the scope of this document, the approach followed
 to write it and its intended audience.
@@ -14,20 +12,20 @@ It is common practice for architecture documents to model viewpoints
 and concerns of various stakeholders. On the other hand, this document
 is much narrower in scope in that it only considers the technical aspects
 of the platform from a developer standpoint with the aim of offering
-enough guidance for an initial platform implementation. In this regard,
+adequate guidance for an initial platform implementation. In this regard,
 the design effort has focused on modelling the software infrastructure
 required to support the KITT4SME workflow and the operation of the
-various AI modules which will be available in the KITT4SME marketplace.
+various AI components which will be available in the KITT4SME marketplace.
 In somewhat more detail, the main objectives are to describe
 
-* how to assemble AI modules from the marketplace into a tailor-made
+* how to assemble AI components from the marketplace into a tailor-made
   service offering for an SME (Diagnose/Compose workflow phases);
 * how to connect them to the shop floor (Sense/Intervene workflow phases);
 * how to enable them to store and exchange data in an interoperable,
   secure, privacy-preserving and scalable way. (Sense/Intervene)
 
 It should be noted that the proposal originally submitted to fund the
-KITT4SME project envisioned an architecture revolving around the integration
+KITT4SME project envisaged an architecture revolving around the integration
 of the RAMP platform to provide marketplace functionality and the adoption
 of the FIWARE platform as a system backbone. Consequently, the design
 effort has concentrated on developing these ideas further in order to
