@@ -83,7 +83,7 @@ implemented standards such as OPC UA and ROS. Agents can be easily configured
 to translate data coming from external systems into a common format that
 the rest of the platform components know how to handle, namely the NGSI
 data format. It should also be noted that the NGSI specification is a
-widely adopted open source standard. Therefore, the KITT4SME platform
+widely adopted open-source standard. Therefore, the KITT4SME platform
 will be interoperable with any external Web service capable of understanding
 the NGSI data format. Furthermore, data sets originating from different
 NGSI sites can be combined in a multi-site distributed system using the
@@ -294,7 +294,7 @@ The API key field of a `ServiceGroup` serves the purpose of identifying
 the group with the physical device. When sending data to the Agent endpoint,
 a physical device specifies the API key of the group to which it belongs.
 A `ServiceGroup` also contains the URL of the Context Broker to which
-data should be forwarded after having being transformed into an NGSI
+data should be forwarded after having been transformed into an NGSI
 entity. (Recall that Context Broker is the service which maintains the
 entities constituting the current state of the system.) The following
 JSON document exemplifies how to create a `ServiceGroup` for an HTTP
