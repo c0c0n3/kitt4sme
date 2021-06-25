@@ -1,5 +1,5 @@
-Requirements
-------------
+Platform requirements
+---------------------
 > WIP!!
 
 * affordable

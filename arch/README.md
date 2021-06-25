@@ -32,7 +32,7 @@ with new functionality. [Read the executive summary][abstract].
     - [About this document][intro.about]. Scope of this document, the approach
       followed to write it and its intended audience.
     - [Document overview][intro.overview].
-2. [System requirements][view.req]. An account of functional requirements
+2. [Platform requirements][view.req]. An account of functional requirements
    and system quality attributes which shape the architecture.
 3. [System decomposition][view.conceptual]. Subsystems and components,
    modularity.
