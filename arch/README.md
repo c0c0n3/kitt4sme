@@ -38,7 +38,7 @@ with new functionality. [Read the executive summary][abstract].
    modularity.
 4. [Information model][view.data]. What information the system handles and
    how it is represented and processed, with an emphasis on interoperability.
-5. **Interaction mechanics**. Distributed communication protocols and
+5. [Interaction mechanics][view.ipc]. Distributed communication protocols and
    synchronisation, message routing and manipulation.
     - [RESTful services][view.rest].
     - [NGSI services][view.ngsi-svc].
@@ -105,6 +105,7 @@ In fact, this is what's in the DoA
 [view.conceptual]: ./conceptual-view/system-decomposition.md
 [view.data]: ./fw-middleware/data.md
 [view.interception]: ./mesh/interception.md
+[view.ipc]: ./ipc.md
 [view.ngsi-svc]: ./fw-middleware/ngsi-services.md
 [view.provisioning]: ./fw-middleware/provisioning.md
 [view.pub-sub]: ./fw-middleware/ctx-change-propagation.md
