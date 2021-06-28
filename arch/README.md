@@ -40,10 +40,10 @@ with new functionality. [Read the executive summary][abstract].
    how it is represented and processed, with an emphasis on interoperability.
 5. **Interaction mechanics**. Distributed communication protocols and
    synchronisation, message routing and manipulation.
-    - [RESTful services][rest].
-    - NGSI services.
+    - [RESTful services][view.rest].
+    - [NGSI services][view.ngsi-svc].
     - [Pub/sub and IoT context propagation][view.pub-sub].
-    - mesh & traffic management.
+    - [Mesh & traffic management][view.interception].
 6. **Persistence**.
     - [Time series][view.times-series]. How to take advantage of NGSI pub/sub
       to implement IoT time-series services.
@@ -100,12 +100,14 @@ In fact, this is what's in the DoA
 [intro.platform]: ./intro/platform.md
 [intro.workflow]: ./intro/workflow.md
 [proto]: ../poc/README.md
-[rest]: ./rest.md
 [scenarios]: ./scenarios.md
 [view.ci]: ./mesh/gitops.md
 [view.conceptual]: ./conceptual-view/system-decomposition.md
 [view.data]: ./fw-middleware/data.md
+[view.interception]: ./mesh/interception.md
+[view.ngsi-svc]: ./fw-middleware/ngsi-services.md
 [view.provisioning]: ./fw-middleware/provisioning.md
 [view.pub-sub]: ./fw-middleware/ctx-change-propagation.md
 [view.req]: ./requirements.md
+[view.rest]: ./rest.md
 [view.times-series]: ./fw-middleware/time-series.md
