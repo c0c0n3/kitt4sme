@@ -47,10 +47,10 @@ There are three kinds of resources:
   manipulate the graph (context) by invoking HTTP methods on `Entity`
   resources.
 * Subscription data. These resources are NGSI `Subscription` instances
-  that, as explained in the [information model], establish a publish-subscribe
-  relationship between services whereby a subscriber service can ask an
-  NGSI service (the publisher) to get notified of changes to the context
-  data.
+  that, as explained in the [information model][view.data], establish
+  a publish-subscribe relationship between services whereby a subscriber
+  service can ask an NGSI service (the publisher) to get notified of
+  changes to the context data.
 * Registration data. An NGSI service can use these resources to let other
   NGSI services know which parts of the context data it maintains. In this
   way, the information graph can be partitioned and distributed among services.
@@ -170,3 +170,4 @@ facility, not the entire NGSI API.
 [intro.platform]: ../intro/platform.md
 [ngsi.ld]: https://www.etsi.org/deliver/etsi_gs/CIM/001_099/009/01.04.02_60/gs_CIM009v010402p.pdf
 [ngsi.v2]: https://fiware.github.io/specifications/ngsiv2/stable/
+[view.data]: ../fw-middleware/data.md
