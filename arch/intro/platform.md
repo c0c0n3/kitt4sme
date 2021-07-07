@@ -40,12 +40,7 @@ storage) across cluster nodes. Additionally, the mesh infrastructure
 provides a programmable interface to manage, secure and observe service
 traffic independently of services. Kubernetes together with Istio form
 the preferred software stack to provide the mesh infrastructure, although
-similar products may be employed. In any case, it should be noted that
-several cloud providers offer the whole mesh infrastructure as a managed
-service which would dramatically simplify the implementation of the
-KITT4SME platform if running the KITT4SME services in a commercial cloud
-were an option. (Whether that may be the case is still not clear at the
-time of writing.)
+similar products may be employed.
 
 Purely from a software standpoint, a key project objective is to combine
 both the FIWARE and RAMP platforms in a unique software offering tailored
