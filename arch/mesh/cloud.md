@@ -49,7 +49,7 @@ processes and hardware. From the bottom up, these layers are:
 The following diagram depicts a KITT4SME cloud instance connected to
 two factories and linked to the RAMP marketplace.
 
-[KITT4SME cloud instance.][dia.crt]
+![KITT4SME cloud instance.][dia.crt]
 
 Application services typically depend on platform infrastructure services
 to support their operation. Some infrastructure services may also depend
