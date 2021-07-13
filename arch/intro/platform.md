@@ -31,7 +31,7 @@ environment and relies on a dedicated cluster software infrastructure.
 The platform design revolves around the key concepts and principles
 outlined below.
 
-#### Key software stacks
+#### Leveraging state-of-the-art technology
 The KITT4SME platform relies on a dedicated cluster software infrastructure.
 This cluster software, referred to as "mesh infrastructure" in the following,
 orchestrates the deployment and operation of services and provides a
@@ -40,12 +40,7 @@ storage) across cluster nodes. Additionally, the mesh infrastructure
 provides a programmable interface to manage, secure and observe service
 traffic independently of services. Kubernetes together with Istio form
 the preferred software stack to provide the mesh infrastructure, although
-similar products may be employed. In any case, it should be noted that
-several cloud providers offer the whole mesh infrastructure as a managed
-service which would dramatically simplify the implementation of the
-KITT4SME platform if running the KITT4SME services in a commercial cloud
-were an option. (Whether that may be the case is still not clear at the
-time of writing.)
+similar products may be employed.
 
 Purely from a software standpoint, a key project objective is to combine
 both the FIWARE and RAMP platforms in a unique software offering tailored
@@ -72,7 +67,7 @@ application services that are an integral part of the KITT4SME workflow
 services that support the operation of application services, such as
 the services in the FIWARE middleware.
 
-#### Interaction mechanics
+#### RESTful interactions
 Most KITT4SME platform services are expected to expose their functionality
 through Web interfaces in accordance with the REpresentational State
 Transfer (REST) architectural style. As a distributed architecture style,
@@ -109,7 +104,7 @@ enrich services with non-functional features (e.g. security) and enhance
 overall quality of service (e.g. performance). Communicating parties
 have no knowledge of intermediaries.
 
-#### Open standards and interoperability
+#### Embracing open standards and interoperability
 Services have to exchange information in order to perform KITT4SME
 workflow tasks. For data to be exchanged and processed meaningfully,
 services have to agree on data formats and semantics as well as on a
@@ -165,7 +160,7 @@ are paid for on a per-usage basis rather than purchased should make
 KITT4SME services affordable even to small manufacturing companies
 on a budget.
 
-#### Deployment
+#### Containerised deployment and orchestration
 Service software is packaged along with operating system images which
 are then run in the cluster through operating-system level virtualisation.
 (The packaged software is often referred to as a "container image" whereas
@@ -175,7 +170,7 @@ the others through an automated release process whereby the publishing
 of images and deployment instructions in an online repository triggers
 the service instantiation in the mesh infrastructure.
 
-#### Service development
+#### Decoupled service development
 Services are typically developed independently using the most appropriate
 technology stack for service implementation. Consequently, different
 programming languages, frameworks, databases, etc. may be used to implement

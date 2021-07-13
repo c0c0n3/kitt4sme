@@ -16,7 +16,7 @@ to designing and documenting the platform architecture. Taking the
 functional decomposition in the Description of Action as a starting
 point, we have built a platform prototype by iteratively considering
 requirements from the user journey, the security and AI analysis tasks
-(from WP1) as well as the integration of partners’ software. In addition
+(from WP1) as well as the integration of partners' software. In addition
 to testing out our design ideas, this prototype has allowed us to
 investigate some scenarios which we deem representative of real-world
 use cases. Feedback from implementation tasks and regular reviews have

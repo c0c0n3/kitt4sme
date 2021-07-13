@@ -195,7 +195,7 @@ would be encoded as `/factory1/floor2`. The concept of a `Service` furnishes
 the data architect with an even stronger mechanism to separate entities
 into disjoint groups: all the entities in the system are partitioned
 by service. Thus, entities in one service partition are isolated from
-the entities in any another partition. Often FIWARE-based cloud solutions
+the entities in any other partition. Often FIWARE-based cloud solutions
 exploit this mechanism to implement multi-tenancy: a tenant (typically
 a company utilising the cloud's services) is identified with a FIWARE
 `Service` so that their data, i.e. the entity hierarchies they own, are
