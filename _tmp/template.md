@@ -43,6 +43,8 @@ Example:
   the operator can easily gauge product quality and possibly intervene to
   reconfigure their production process.
 
+![Roughnator context diagram][roughnator.dia]
+
 
 ### Role in the architecture
 
