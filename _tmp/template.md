@@ -28,22 +28,6 @@ Example:
   near real time, it enables the KITT4SME platform to offer manufacturing
   SMEs a service to implement in-process quality assessment and machine
   reconfiguration.
-* The following diagram puts Roughnator into the context of the KITT4SME
-  platform. As a platform application service, Roughnator is available
-  in the RAMP marketplace. An SME can deploy the service from there and
-  then connect their machines to the KITT4SME platform to have Roughnator
-  produce roughness estimates as the machines work on a production batch.
-  As raw measurements come in from the shop floor the platform middleware
-  refines them into NGSI entities and passes these entities on to the
-  Roughnator service. On receiving an NGSI entity, Roughnator feeds it
-  into its machine learning model to produce a roughness forecast which
-  it writes to the IoT context. The platform infrastructure tracks changes
-  to the IoT context to produce time series which are ultimately displayed
-  in a RAMP dashboard an SME operator has access to. Through the dashboard,
-  the operator can easily gauge product quality and possibly intervene to
-  reconfigure their production process.
-
-![Roughnator context diagram][roughnator.dia]
 
 
 ### Role in the architecture
@@ -65,6 +49,22 @@ Example:
   the underlying mesh infrastructure for security, scalability and
   automated deployment. Roughnator is available to SMEs through the
   RAMP marketplace.
+* The following diagram puts Roughnator into the context of the KITT4SME
+  platform. As a platform application service, Roughnator is available
+  in the RAMP marketplace. An SME can deploy the service from there and
+  then connect their machines to the KITT4SME platform to have Roughnator
+  produce roughness estimates as the machines work on a production batch.
+  As raw measurements come in from the shop floor the platform middleware
+  refines them into NGSI entities and passes these entities on to the
+  Roughnator service. On receiving an NGSI entity, Roughnator feeds it
+  into its machine learning model to produce a roughness forecast which
+  it writes to the IoT context. The platform infrastructure tracks changes
+  to the IoT context to produce time series which are ultimately displayed
+  in a RAMP dashboard an SME operator has access to. Through the dashboard,
+  the operator can easily gauge product quality and possibly intervene to
+  reconfigure their production process.
+
+![Roughnator context diagram][roughnator.dia]
 
 
 ### Requirements
