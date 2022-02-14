@@ -76,6 +76,9 @@ with new functionality. [Read the executive summary][abstract].
       representative of how the platform will be used and how we tested
       them with the prototype.
 13. [Conclusion][conclusion].
+14. Appendix: [Software catalogue][catalogue]. Overview of the software
+    KITT4SME partners are integrating into the platform, role in the
+    architecture, purpose and value proposition.
 
 
 ### Notes
@@ -96,6 +99,7 @@ In fact, this is what's in the DoA
 
 
 [abstract]: ./abstract.md
+[catalogue]: ./catalogue/README.md
 [conclusion]: ./conclusion.md
 [intro]: ./intro/README.md
 [intro.about]: ./intro/about.md
