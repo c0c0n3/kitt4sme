@@ -80,7 +80,7 @@ of application services, so unlike application services they are not
 available in the RAMP marketplace. Below is a visual to summarise the
 role of the FIWARE middleware in the KITT4SME architecture.
 
-![FIWARE middleware context diagram][ql.dia]
+![FIWARE middleware context diagram][fw.dia]
 
 
 ### Requirements
