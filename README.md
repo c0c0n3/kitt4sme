@@ -7,7 +7,6 @@ KITT4SME architecture playground
 * [Project Plan][plan]
 
 
-
 [arch]: ./arch/README.md
-[plan]: ./plan/high-level.md
+[plan]: ./plan/README.md
 [poc]: ./poc/README.md
