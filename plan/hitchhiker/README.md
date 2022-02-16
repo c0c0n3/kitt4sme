@@ -126,9 +126,35 @@ as the reviewers—"Assignees" and "Reviewers" field, respectively.
 
 ### Running a sprint
 
-**TODO**
+Well, it's more of a marathon than a sprint but we definitely never
+stand still! While running a sprint (iteration), we use a Kanban board
+to help us stay on track—pun intended :-) The board has five columns:
+
+- **Backlog**. Features (or fixes) planned for the sprint but that
+  nobody's working on at the moment.
+- **Shaping**. Features that need more thinking time before coding.
+  As it happens, sometimes even if we thought a feature was clearly
+  defined in the grooming session, when you get to write the code
+  you realise some important details are missing or were overlooked
+  during the grooming session.
+- **In-progress**. Features currently being implemented—that includes
+  dev testing too.
+- **QA**. Items devs have finished working on and are now ready for
+  review.
+- **Released**. Stuff we got out of the door and is now live.
+
+
+This is what Spint 2's Kanban board looked like towards the end of
+the iteration.
 
 ![Sprint 2 at 03 Feb 2022.][proj.s2]
+
+One last thing we should mention is the [Sprints view][proj.spr]. Out
+of convenience, we added this extra view to the [KITT4SME project][proj]
+so we can tell at a glance who was tasked with what when as well as
+the status, progress and priority of the various work items. Within
+this view, low-level features are grouped by the iteration they have
+been worked on or for which they're planned.
 
 
 
@@ -144,7 +170,7 @@ as the reviewers—"Assignees" and "Reviewers" field, respectively.
 [proj]: https://github.com/users/c0c0n3/projects/1
 [proj.obj]: https://github.com/users/c0c0n3/projects/1/views/1
 [proj.rm]: https://github.com/users/c0c0n3/projects/1/views/9
+[proj.spr]: https://github.com/users/c0c0n3/projects/1/views/10
 [proj.s2]: ./sprint2.03-feb-2022.png
 [manic-mon.song]: https://youtu.be/SsmVgoXDq2w
 [wbs.dia]: ./work-breakdown-structure.jpeg
-
