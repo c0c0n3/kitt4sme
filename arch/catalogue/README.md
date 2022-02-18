@@ -47,8 +47,9 @@ line reconfiguration, staff productivity.
 
 ### RAMP
 
-* Marketplace. AI marketplace jointly developed by European Dynamics
-  and VTT.
+* [Marketplace][ramp]. A customisation of the Robotics and Automation
+  Marketplace jointly developed by European Dynamics and VTT for the
+  specific needs of the KITT4SME project.
 * Data sheets. Digital data sheets for module composability developed
   by VTT.
 * Adaptive Questionnaire. SUPSI's AI-powered questionnaire to determine
@@ -73,4 +74,5 @@ line reconfiguration, staff productivity.
 
 [fw]: ./fiware.md
 [ql]: ./quantumleap.md
+[ramp]: ./marketplace.md
 [template]: ./template.md
