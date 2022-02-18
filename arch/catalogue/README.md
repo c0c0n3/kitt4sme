@@ -18,8 +18,8 @@ line reconfiguration, staff productivity.
 * [AI for Quality Inspection Systems][aiqus]. AI with data augmentation
   for continuous evaluation, fine tunning and re-configuration of quality
   control. Developed by R2M.
-* Vision for Quality Excellence. Deep learning image processing by
-  Rovimatica to inspect and evaluate the quality of manufacturing
+* [Vision for Quality Excellence][viqe]. Deep learning image processing
+  by Rovimatica to inspect and evaluate the quality of manufacturing
   parts.
 * [Shop Floor Anomaly Detection System][anomaly]. Ginkgo's machine
   learning solution for real-time welding point anomaly detection
@@ -82,3 +82,4 @@ line reconfiguration, staff productivity.
 [ql]: ./quantumleap.md
 [ramp]: ./marketplace.md
 [template]: ./template.md
+[viqe]: ./viqe.md
