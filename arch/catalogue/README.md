@@ -15,8 +15,8 @@ to add a new component to the list.
 to the KITT4SME's 3-fold value proposition—product quality, production
 line reconfiguration, staff productivity.
 
-* AI for Quality Inspection Systems. AI with data augmentation for
-  continuous evaluation, fine tunning and re-configuration of quality
+* [AI for Quality Inspection Systems][aiqus]. AI with data augmentation
+  for continuous evaluation, fine tunning and re-configuration of quality
   control. Developed by R2M.
 * Vision for Quality Excellence. Deep learning image processing by
   Rovimatica to inspect and evaluate the quality of manufacturing
@@ -75,6 +75,7 @@ line reconfiguration, staff productivity.
 
 
 
+[aiqus]: ./aiqus.md
 [anomaly]: ./anomaly.md
 [fw]: ./fiware.md
 [mpms]: ./mpms.md
