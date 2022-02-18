@@ -15,25 +15,29 @@ to add a new component to the list.
 to the KITT4SME's 3-fold value proposition—product quality, production
 line reconfiguration, staff productivity.
 
-* AI for Quality Inspection Systems. AI with data augmentation for
-  continuous evaluation, fine tunning and re-configuration of quality
+* [AI for Quality Inspection Systems][aiqus]. AI with data augmentation
+  for continuous evaluation, fine tunning and re-configuration of quality
   control. Developed by R2M.
-* Vision for Quality Excellence. Deep learning image processing by
-  Rovimatica to inspect and evaluate the quality of manufacturing
+* [Vision for Quality Excellence][viqe]. Deep learning image processing
+  by Rovimatica to inspect and evaluate the quality of manufacturing
   parts.
-* Shop Floor Anomalies Detection System. Ginkgo's machine learning
-  solution to early detection of manufacturing parts defects.
+* [Shop Floor Anomaly Detection System][anomaly]. Ginkgo's machine
+  learning solution for real-time welding point anomaly detection
+  and welding output Joules forecasting.
 * Milling Quality Control. CSIC's solution for quality control of
   micro-mechanical milling operations originally developed in the
   GAMHE 5.0 pilot line.
 * Shop Floor Reconfigurator. Developed by CSIC.
-* Manufacturing Process Management System. Jointly developed by CSIC
-  and European Dynamics.
-* Production System Profiler. Jointly developed by Holonix and the
-  Warsaw University of Technology.
-* Worker Profiler. Service to suggest training programmes depending
-  on worker's skills and aspirations as well their role in the
-  company. Developed by Holonix and Gate.
+* [Manufacturing Process Management System][mpms]. Orchestrates humans
+  and machines involved in a production line by keeping a model of the
+  production process to timely assign tasks and coordinate work. Jointly
+  developed by CSIC and European Dynamics.
+* [Production System Profiler][ppro]. Identifies worker skills and factory
+  needs at various levels—whole plant, production line, workplace. Jointly
+  developed by Holonix and the Warsaw University of Technology.
+* [Worker Profiler][wpro]. Service to suggest training programmes
+  depending on worker's skills and aspirations as well their role
+  in the company. Developed by Holonix and Gate.
 * Catalogue of Qualified Training Experiences. Gate's dynamic and
   comprehensive catalogue of training experiences to be used by
   Worker Profiler.
@@ -47,8 +51,9 @@ line reconfiguration, staff productivity.
 
 ### RAMP
 
-* Marketplace. AI marketplace jointly developed by European Dynamics
-  and VTT.
+* [Marketplace][ramp]. A customisation of the Robotics and Automation
+  Marketplace jointly developed by European Dynamics and VTT for the
+  specific needs of the KITT4SME project.
 * Data sheets. Digital data sheets for module composability developed
   by VTT.
 * Adaptive Questionnaire. SUPSI's AI-powered questionnaire to determine
@@ -71,6 +76,13 @@ line reconfiguration, staff productivity.
 
 
 
+[aiqus]: ./aiqus.md
+[anomaly]: ./anomaly.md
 [fw]: ./fiware.md
+[mpms]: ./mpms.md
+[ppro]: ./prodpro.md
 [ql]: ./quantumleap.md
+[ramp]: ./marketplace.md
 [template]: ./template.md
+[viqe]: ./viqe.md
+[wpro]: ./workpro.md
