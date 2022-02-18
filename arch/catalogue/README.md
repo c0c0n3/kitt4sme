@@ -27,8 +27,10 @@ line reconfiguration, staff productivity.
   micro-mechanical milling operations originally developed in the
   GAMHE 5.0 pilot line.
 * Shop Floor Reconfigurator. Developed by CSIC.
-* Manufacturing Process Management System. Jointly developed by CSIC
-  and European Dynamics.
+* [Manufacturing Process Management System][mpms]. Orchestrates humans
+  and machines involved in a production line by keeping a model of the
+  production process to timely assign tasks and coordinate work. Jointly
+  developed by CSIC and European Dynamics.
 * Production System Profiler. Jointly developed by Holonix and the
   Warsaw University of Technology.
 * Worker Profiler. Service to suggest training programmes depending
@@ -73,6 +75,7 @@ line reconfiguration, staff productivity.
 
 
 [fw]: ./fiware.md
+[mpms]: ./mpms.md
 [ql]: ./quantumleap.md
 [ramp]: ./marketplace.md
 [template]: ./template.md
