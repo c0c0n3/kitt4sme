@@ -21,8 +21,9 @@ line reconfiguration, staff productivity.
 * Vision for Quality Excellence. Deep learning image processing by
   Rovimatica to inspect and evaluate the quality of manufacturing
   parts.
-* Shop Floor Anomalies Detection System. Ginkgo's machine learning
-  solution to early detection of manufacturing parts defects.
+* [Shop Floor Anomaly Detection System][anomaly]. Ginkgo's machine
+  learning solution for real-time welding point anomaly detection
+  and welding output Joules forecasting.
 * Milling Quality Control. CSIC's solution for quality control of
   micro-mechanical milling operations originally developed in the
   GAMHE 5.0 pilot line.
@@ -74,6 +75,7 @@ line reconfiguration, staff productivity.
 
 
 
+[anomaly]: ./anomaly.md
 [fw]: ./fiware.md
 [mpms]: ./mpms.md
 [ql]: ./quantumleap.md
