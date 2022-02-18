@@ -34,9 +34,9 @@ line reconfiguration, staff productivity.
   developed by CSIC and European Dynamics.
 * Production System Profiler. Jointly developed by Holonix and the
   Warsaw University of Technology.
-* Worker Profiler. Service to suggest training programmes depending
-  on worker's skills and aspirations as well their role in the
-  company. Developed by Holonix and Gate.
+* [Worker Profiler][wpro]. Service to suggest training programmes
+  depending on worker's skills and aspirations as well their role
+  in the company. Developed by Holonix and Gate.
 * Catalogue of Qualified Training Experiences. Gate's dynamic and
   comprehensive catalogue of training experiences to be used by
   Worker Profiler.
@@ -83,3 +83,4 @@ line reconfiguration, staff productivity.
 [ramp]: ./marketplace.md
 [template]: ./template.md
 [viqe]: ./viqe.md
+[wpro]: ./workpro.md
