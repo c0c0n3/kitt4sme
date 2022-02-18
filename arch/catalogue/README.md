@@ -32,8 +32,9 @@ line reconfiguration, staff productivity.
   and machines involved in a production line by keeping a model of the
   production process to timely assign tasks and coordinate work. Jointly
   developed by CSIC and European Dynamics.
-* Production System Profiler. Jointly developed by Holonix and the
-  Warsaw University of Technology.
+* [Production System Profiler][ppro]. Identifies worker skills and factory
+  needs at various levels—whole plant, production line, workplace. Jointly
+  developed by Holonix and the Warsaw University of Technology.
 * [Worker Profiler][wpro]. Service to suggest training programmes
   depending on worker's skills and aspirations as well their role
   in the company. Developed by Holonix and Gate.
@@ -79,6 +80,7 @@ line reconfiguration, staff productivity.
 [anomaly]: ./anomaly.md
 [fw]: ./fiware.md
 [mpms]: ./mpms.md
+[ppro]: ./prodpro.md
 [ql]: ./quantumleap.md
 [ramp]: ./marketplace.md
 [template]: ./template.md
