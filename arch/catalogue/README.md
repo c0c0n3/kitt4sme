@@ -24,9 +24,9 @@ line reconfiguration, staff productivity.
 * [Shop Floor Anomaly Detection System][anomaly]. Ginkgo's machine
   learning solution for real-time welding point anomaly detection
   and welding output Joules forecasting.
-* Milling Quality Control. CSIC's solution for quality control of
-  micro-mechanical milling operations originally developed in the
-  GAMHE 5.0 pilot line.
+* [Milling Quality Control][roughnator]. CSIC's solution for quality
+  control of micro-mechanical milling operations originally developed
+  in the GAMHE 5.0 pilot line.
 * Shop Floor Reconfigurator. Developed by CSIC.
 * [Manufacturing Process Management System][mpms]. Orchestrates humans
   and machines involved in a production line by keeping a model of the
@@ -83,6 +83,7 @@ line reconfiguration, staff productivity.
 [ppro]: ./prodpro.md
 [ql]: ./quantumleap.md
 [ramp]: ./marketplace.md
+[roughnator]: ./roughnator.md
 [sl]: ./sensing-layer.md
 [template]: ./template.md
 [viqe]: ./viqe.md
