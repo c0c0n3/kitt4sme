@@ -1,5 +1,9 @@
 Sensing Layer
---------------------
+-------------
+
+**NOTE**. The content below was contributed by Holonix, copy-pasted from
+the original document.
+
 
 ### High-level functionality 
 Sensing Layer implements access points, manipulation, storing and routing of the data regarding workplace and workers and coming from different and multiple sources like wearable devices and environment sensors.  It supports all possible use cases involving the use of the watches data sensor data for determining the assistance intervention for worker wellness during shop floor activities, as it provides an interoperability solution (APIs and broker client) for bidirectional data exchange between devices and the KITT4SME platform.

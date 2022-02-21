@@ -62,7 +62,7 @@ line reconfiguration, staff productivity.
 
 ### Infrastructure services
 
-* Sensing Layer. IoT connectivity solution developed by Holonix.
+* [Sensing Layer][sl]. IoT connectivity solution developed by Holonix.
 * [FIWARE middleware][fw]. "Powered by FIWARE" IoT communication,
   data exchange and interoperability backbone developed by Martel.
 * [QuantumLeap][ql]. Service for storing and querying spatial-temporal
@@ -83,6 +83,7 @@ line reconfiguration, staff productivity.
 [ppro]: ./prodpro.md
 [ql]: ./quantumleap.md
 [ramp]: ./marketplace.md
+[sl]: ./sensing-layer.md
 [template]: ./template.md
 [viqe]: ./viqe.md
 [wpro]: ./workpro.md
