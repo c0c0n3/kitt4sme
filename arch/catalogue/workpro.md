@@ -18,15 +18,14 @@ on the information extracted in the previous point. The tool (offered by GATE) w
 questionnaire design phase more efficient and replicable. Finally, reference standards like ESCO and O*NET are used
 to quantify gaps and to create a proper assessment procedure to be integrated into the tool._
 
-_GATE will lead the task creating the skills map and the new archetypes supported by HOL for the implementation of
-the resulting Worker Profiler and by the end-users for characterizing archetypes related to the pilots._
-
 ### High-level functionality
 
 The worker profiler is a tool able to assess the skill gap of a worker in relation to:
 - The technological skill needs driven by AI revolution and what International competence databases define as standards for her/his professional role (should do & want to do);
 - The ambitions of the worker (wish to be);
 - The technological skill needs driven by the acquisition of a specific AI component in KITT4SME platform.
+
+![Profilers](https://user-images.githubusercontent.com/2041951/154861888-c83fc9ce-9c1e-44d6-b6df-1039dbe786f4.png)
 
 ### Role in the architecture
 
