@@ -44,9 +44,10 @@ line reconfiguration, staff productivity.
 * Competence Matchmaking Tool. (Gate)
 * Gate's AI-Learn?
 * Gate's Techimetro?
-* Fatigue Monitoring System. Developed by SUPSI.
+* [Fatigue Monitoring System][fams]. Service for predicting the perceived fatigue exertion of workers. Developed by SUPSI.
 * SME-Oriented Platform Configurator. Developed by SUPSI.
-* Intervention Manager. Developed by SUPSI.
+* [Intervention Manager][im]. Service to define
+intervention rules for orchestrating a production system. Developed by SUPSI.
 
 
 ### RAMP
@@ -87,3 +88,5 @@ line reconfiguration, staff productivity.
 [template]: ./template.md
 [viqe]: ./viqe.md
 [wpro]: ./workpro.md
+[im]: ./im.md
+[fams]: ./fams.md
