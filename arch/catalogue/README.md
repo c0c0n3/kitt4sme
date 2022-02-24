@@ -40,8 +40,10 @@ line reconfiguration, staff productivity.
   in the company. Developed by Holonix and Gate.
 * Catalogue of Qualified Training Experiences. Gate's dynamic and
   comprehensive catalogue of training experiences to be used by
-  Worker Profiler.
-* Competence Matchmaking Tool. (Gate)
+  the matchmaking tool.
+* [Competence Matchmaking Tool][cmt]. SUPSI's service to suggest
+  personalised staff training in order to increase staff productivity
+  and, consequently, production line efficiency.
 * Gate's AI-Learn?
 * Gate's Techimetro?
 * [Fatigue Monitoring System][fams]. Service for predicting the perceived fatigue exertion of workers. Developed by SUPSI.
@@ -79,6 +81,7 @@ intervention rules for orchestrating a production system. Developed by SUPSI.
 
 [aiqus]: ./aiqus.md
 [anomaly]: ./anomaly.md
+[cmt]: ./MatchmakingTool.md
 [fw]: ./fiware.md
 [mpms]: ./mpms.md
 [ppro]: ./prodpro.md
