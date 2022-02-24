@@ -27,7 +27,10 @@ line reconfiguration, staff productivity.
 * [Milling Quality Control][roughnator]. CSIC's solution for quality
   control of micro-mechanical milling operations originally developed
   in the GAMHE 5.0 pilot line.
-* Shop Floor Reconfigurator. Developed by CSIC.
+* [Shop Floor Reconfigurator][sfr]. AI recommender enabling in-process
+  reconfiguration. It can suggest how to reconfigure shop floor machines
+  in near real-time or even automatically reconfigure the machines.
+  Developed by CSIC.
 * [Manufacturing Process Management System][mpms]. Orchestrates humans
   and machines involved in a production line by keeping a model of the
   production process to timely assign tasks and coordinate work. Jointly
@@ -82,15 +85,16 @@ intervention rules for orchestrating a production system. Developed by SUPSI.
 [aiqus]: ./aiqus.md
 [anomaly]: ./anomaly.md
 [cmt]: ./MatchmakingTool.md
+[fams]: ./fams.md
 [fw]: ./fiware.md
+[im]: ./im.md
 [mpms]: ./mpms.md
 [ppro]: ./prodpro.md
 [ql]: ./quantumleap.md
 [ramp]: ./marketplace.md
 [roughnator]: ./roughnator.md
+[sfr]: ./shop-floor-reconfigurator.md
 [sl]: ./sensing-layer.md
 [template]: ./template.md
 [viqe]: ./viqe.md
 [wpro]: ./workpro.md
-[im]: ./im.md
-[fams]: ./fams.md
