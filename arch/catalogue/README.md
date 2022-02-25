@@ -62,8 +62,8 @@ intervention rules for orchestrating a production system. Developed by SUPSI.
   specific needs of the KITT4SME project.
 * Data sheets. Digital data sheets for module composability developed
   by VTT.
-* Adaptive Questionnaire. SUPSI's AI-powered questionnaire to determine
-  the most suitable service kit for a manufacturing company.
+* [Adaptive Questionnaire][aq]. SUPSI's AI-powered questionnaire to
+  determine the most suitable service kit for a manufacturing company.
 
 
 ### Infrastructure services
@@ -83,6 +83,7 @@ intervention rules for orchestrating a production system. Developed by SUPSI.
 
 
 [aiqus]: ./aiqus.md
+[aq]: ./aq.md
 [anomaly]: ./anomaly.md
 [cmt]: ./MatchmakingTool.md
 [fams]: ./fams.md
