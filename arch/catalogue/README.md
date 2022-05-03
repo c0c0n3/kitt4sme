@@ -8,6 +8,10 @@ it does, its purpose in the platform and role in the architecture
 as well as why it's valuable. Please use [this template][template]
 to add a new component to the list.
 
+Also, we've started working on a [platform exploitation doc][plat-er],
+but this is still early-day kind of stuff since we haven't fleshed
+out key aspects like business model, strategy, etc.
+
 
 ### Application services
 
@@ -47,8 +51,6 @@ line reconfiguration, staff productivity.
 * [Competence Matchmaking Tool][cmt]. SUPSI's service to suggest
   personalised staff training in order to increase staff productivity
   and, consequently, production line efficiency.
-* Gate's AI-Learn?
-* Gate's Techimetro?
 * [Fatigue Monitoring System][fams]. Service for predicting the perceived fatigue exertion of workers. Developed by SUPSI.
 * SME-Oriented Platform Configurator. Developed by SUPSI.
 * [Intervention Manager][im]. Service to define
@@ -90,6 +92,7 @@ intervention rules for orchestrating a production system. Developed by SUPSI.
 [fw]: ./fiware.md
 [im]: ./im.md
 [mpms]: ./mpms.md
+[plat-er]: ./platform-er.md
 [ppro]: ./prodpro.md
 [ql]: ./quantumleap.md
 [ramp]: ./marketplace.md
