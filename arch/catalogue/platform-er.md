@@ -62,7 +62,27 @@ Early adopters
 
 ### Value proposition
 
-TODO
+TODO the text below is basically a copy-paste-tweak from
+https://github.com/c0c0n3/kitt4sme/blob/master/arch/intro/motivation.md
+
+Artificial Intelligence (AI) has the potential to revolutionise the
+shop floor by considerably increasing product quality, for example
+by detecting and correcting any anomalies. AI can optimise the reconfiguration
+of a production line, potentially paving the way to lot size one production.
+Furthermore, AI can even improve staff productivity by suggesting fatigue
+and stress relief measures as well as personalised training.
+
+The better the factory does in these areas the more profitable the
+company can potentially be. Small and medium-sized enterprises (SMEs)
+constitute the backbone of the European economy, thus the more profitable
+SMEs become, the stronger the European economy becomes too. Nevertheless,
+despite the potential benefits, very few SMEs have implemented AI solutions
+in their factories. What is preventing them from jumping on the AI
+bandwagon? As it turns out, mostly low budgets and lack of expertise.
+The KITT4SME platform aims to smash down these adoption barriers by
+offering SMEs affordable, tailor-made AI for quality, reconfiguration
+and human-robot interaction (HRI) through a marketplace and an adoption
+support network.
 
 
 ### Progress
