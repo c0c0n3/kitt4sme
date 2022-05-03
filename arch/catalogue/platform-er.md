@@ -39,18 +39,25 @@ for manufacturing SMEs. AI developers leverage the platform compute
 infrastructure so they can focus on delivering business value rather
 than building infrastructure.
 
+![Technology stack context diagram.][tech-stack.dia]
+
 
 ### Innovation
 
 TODO
 
 
-### Target customers
+### Target market
 
 * European manufacturers
 * AI developers developing solutions for the European manufacturing
   industry
 * Cloud platform providers
+
+Early adopters
+
+* Manufacturing companies involved in the KITT4SME pilot deployments
+* Later on other manufacturers depending on market strategy
 
 
 ### Value proposition
@@ -62,3 +69,14 @@ TODO
 
 MVP released, working towards pilot deployments. Some additional
 infrastructure required to support open calls.
+
+Technology readiness level:
+
+* Initial: 3 (experimental proof of concept)
+* Current: 4 (technology validated in lab)
+* Expected: 7 (system prototype demonstration in operational environment)
+
+
+
+
+[tech-stack.dia]: https://raw.githubusercontent.com/c0c0n3/kitt4sme.live/main/docs/tech-stack.svg
