@@ -47,8 +47,6 @@ line reconfiguration, staff productivity.
 * [Competence Matchmaking Tool][cmt]. SUPSI's service to suggest
   personalised staff training in order to increase staff productivity
   and, consequently, production line efficiency.
-* Gate's AI-Learn?
-* Gate's Techimetro?
 * [Fatigue Monitoring System][fams]. Service for predicting the perceived fatigue exertion of workers. Developed by SUPSI.
 * SME-Oriented Platform Configurator. Developed by SUPSI.
 * [Intervention Manager][im]. Service to define
