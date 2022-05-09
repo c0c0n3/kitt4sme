@@ -31,6 +31,11 @@ line reconfiguration, staff productivity.
 * [Milling Quality Control][roughnator]. CSIC's solution for quality
   control of micro-mechanical milling operations originally developed
   in the GAMHE 5.0 pilot line.
+* [Insight Generator][ig]. Provides pivotal insights to optimise
+  manufacturing systems. Insight Generator uses machine-learning
+  techniques to analyse historical data and determine the most suitable
+  configuration to optimise a manufacturing system depending on
+  user-defined KPIs. Insight Generator has been developed by CSIC.
 * [Shop Floor Reconfigurator][sfr]. AI recommender enabling in-process
   reconfiguration. It can suggest how to reconfigure shop floor machines
   in near real-time or even automatically reconfigure the machines.
@@ -90,6 +95,7 @@ intervention rules for orchestrating a production system. Developed by SUPSI.
 [cmt]: ./MatchmakingTool.md
 [fams]: ./fams.md
 [fw]: ./fiware.md
+[ig]: ./insight_generator.md
 [im]: ./im.md
 [mpms]: ./mpms.md
 [plat-er]: ./platform-er.md
