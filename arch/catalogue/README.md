@@ -57,7 +57,7 @@ line reconfiguration, staff productivity.
   personalised staff training in order to increase staff productivity
   and, consequently, production line efficiency.
 * [Fatigue Monitoring System][fams]. Service for predicting the perceived fatigue exertion of workers. Developed by SUPSI.
-* SME-Oriented Platform Configurator. Developed by SUPSI.
+* [SME-Oriented Platform Configurator][pc]. Developed by SUPSI.
 * [Intervention Manager][im]. Service to define
 intervention rules for orchestrating a production system. Developed by SUPSI.
 
@@ -98,6 +98,7 @@ intervention rules for orchestrating a production system. Developed by SUPSI.
 [ig]: ./insight_generator.md
 [im]: ./im.md
 [mpms]: ./mpms.md
+[pc]: ./pc.md
 [plat-er]: ./platform-er.md
 [ppro]: ./prodpro.md
 [ql]: ./quantumleap.md
